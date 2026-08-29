@@ -19,19 +19,19 @@ body{
 }
 
 header{
-  background:linear-gradient(135deg,#0757c9,#0b8cff);
+  background:linear-gradient(135deg,#0757c9,#08b8ff);
   color:white;
   padding:28px 18px;
   text-align:center;
 }
 
 header h1{
-  font-size:28px;
+  font-size:30px;
   margin-bottom:8px;
 }
 
 header p{
-  font-size:15px;
+  font-size:16px;
 }
 
 .container{
@@ -42,9 +42,9 @@ header p{
 
 .search{
   width:100%;
-  padding:14px;
+  padding:15px;
   border:1px solid #ddd;
-  border-radius:10px;
+  border-radius:12px;
   font-size:16px;
   margin-bottom:20px;
   outline:none;
@@ -53,9 +53,9 @@ header p{
 .welcome{
   background:white;
   padding:22px;
-  border-radius:14px;
-  margin-bottom:22px;
-  box-shadow:0 3px 12px rgba(0,0,0,.08);
+  border-radius:15px;
+  margin-bottom:20px;
+  box-shadow:0 3px 15px rgba(0,0,0,.08);
 }
 
 .welcome h2{
@@ -65,70 +65,61 @@ header p{
 
 .services{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
   gap:15px;
 }
 
 .service{
   background:white;
-  border-radius:14px;
   padding:22px 10px;
   text-align:center;
-  box-shadow:0 3px 12px rgba(0,0,0,.08);
+  border-radius:15px;
+  box-shadow:0 3px 15px rgba(0,0,0,.08);
   cursor:pointer;
   transition:.2s;
 }
 
 .service:hover{
   transform:translateY(-4px);
+  box-shadow:0 7px 20px rgba(0,0,0,.15);
 }
 
 .icon{
-  font-size:34px;
+  font-size:38px;
   margin-bottom:10px;
 }
 
 .service h3{
-  font-size:16px;
+  font-size:17px;
 }
 
-.contact{
-  margin-top:25px;
+.buttons{
   display:flex;
-  gap:12px;
-  flex-wrap:wrap;
+  gap:15px;
+  margin-top:25px;
 }
 
 .btn{
   flex:1;
-  min-width:140px;
-  padding:14px;
+  padding:15px;
   border:0;
-  border-radius:10px;
+  border-radius:12px;
   color:white;
-  font-size:16px;
+  font-size:18px;
   cursor:pointer;
+  text-decoration:none;
+  text-align:center;
 }
 
 .call{
-  background:#198754;
+  background:#168b55;
 }
 
 .whatsapp{
-  background:#25d366;
+  background:#20c968;
 }
 
-footer{
-  margin-top:30px;
-  background:#20252b;
-  color:white;
-  text-align:center;
-  padding:18px;
-  font-size:13px;
-}
-
-/* POPUP */
-
+/* Modal */
 .modal{
   display:none;
   position:fixed;
@@ -137,77 +128,79 @@ footer{
   top:0;
   width:100%;
   height:100%;
-  background:rgba(0,0,0,.55);
+  background:rgba(0,0,0,.65);
   padding:20px;
 }
 
 .modal-box{
   background:white;
-  max-width:450px;
+  max-width:500px;
   margin:80px auto;
-  border-radius:16px;
   padding:25px;
+  border-radius:18px;
   position:relative;
-  animation:popup .2s ease;
+  animation:pop .2s ease;
 }
 
-@keyframes popup{
-  from{
-    transform:scale(.8);
-    opacity:0;
-  }
-  to{
-    transform:scale(1);
-    opacity:1;
-  }
+@keyframes pop{
+  from{transform:scale(.8);opacity:0}
+  to{transform:scale(1);opacity:1}
 }
 
 .close{
   position:absolute;
-  right:15px;
+  right:18px;
   top:10px;
-  font-size:28px;
+  font-size:30px;
   cursor:pointer;
-  color:#777;
 }
 
-.modal-box h2{
+.modal h2{
   color:#0757c9;
   margin-bottom:12px;
 }
 
-.modal-box p{
+.modal p{
   line-height:1.6;
-  margin-bottom:12px;
+  margin-bottom:15px;
 }
 
-.modal-box ul{
+.modal ul{
   margin-left:20px;
   line-height:1.8;
 }
 
-.modal-buttons{
-  display:flex;
-  gap:10px;
-  margin-top:20px;
-}
-
-.modal-buttons a{
-  flex:1;
-  text-align:center;
-  text-decoration:none;
+.modal-btn{
+  display:block;
+  background:#0757c9;
   color:white;
-  padding:12px;
-  border-radius:9px;
-  font-weight:bold;
+  text-decoration:none;
+  text-align:center;
+  padding:13px;
+  border-radius:10px;
+  margin-top:18px;
 }
 
-.call-link{
-  background:#198754;
+footer{
+  background:#20252b;
+  color:white;
+  text-align:center;
+  padding:20px;
+  margin-top:30px;
 }
 
-.whatsapp-link{
-  background:#25d366;
+@media(max-width:500px){
+  header h1{
+    font-size:27px;
+  }
+
+  .buttons{
+    flex-direction:column;
+  }
+
+  .modal-box{
+    margin:50px auto;
+  }
 }
 </style>
 </head>
@@ -224,7 +217,7 @@ footer{
   <div class="welcome">
     <h2>Welcome 👋</h2>
     <p>
-      Smart Link Cyber Cafe में आपका स्वागत है।
+      Smart Link Cyber Cafe में आपका स्वागत है।<br>
       अपनी जरूरत की Digital Service नीचे चुनें।
     </p>
   </div>
@@ -237,7 +230,7 @@ footer{
     onkeyup="searchService()"
   >
 
-  <div class="services">
+  <div class="services" id="services">
 
     <div class="service" onclick="openService('Online Form')">
       <div class="icon">📝</div>
@@ -281,15 +274,39 @@ footer{
 
   </div>
 
-  <div class="contact">
-
-    <button class="btn call" onclick="callCafe()">
+  <div class="buttons">
+    <a class="btn call" href="tel:7352674891">
       📞 Call Now
-    </button>
+    </a>
 
-    <button class="btn whatsapp" onclick="whatsappCafe()">
+    <a class="btn whatsapp"
+       href="https://wa.me/917352674891"
+       target="_blank">
       💬 WhatsApp
-    </button>
+    </a>
+  </div>
+
+</div>
+
+<!-- SERVICE POPUP -->
+
+<div class="modal" id="serviceModal">
+
+  <div class="modal-box">
+
+    <span class="close" onclick="closeService()">×</span>
+
+    <h2 id="serviceTitle"></h2>
+
+    <p id="serviceText"></p>
+
+    <ul id="serviceList"></ul>
+
+    <a
+      class="modal-btn"
+      href="tel:7352674891">
+      📞 Service के लिए Call करें
+    </a>
 
   </div>
 
@@ -299,211 +316,160 @@ footer{
   © 2026 Smart Link Cyber Cafe
 </footer>
 
-
-<!-- SERVICE POPUP -->
-
-<div id="serviceModal" class="modal">
-
-  <div class="modal-box">
-
-    <span class="close" onclick="closeModal()">×</span>
-
-    <h2 id="modalTitle"></h2>
-
-    <p id="modalDescription"></p>
-
-    <ul id="modalList"></ul>
-
-    <div class="modal-buttons">
-
-      <a href="tel:0000000000" class="call-link">
-        📞 Call
-      </a>
-
-      <a href="https://wa.me/910000000000" class="whatsapp-link">
-        💬 WhatsApp
-      </a>
-
-    </div>
-
-  </div>
-
-</div>
-
-
 <script>
 
 const serviceData = {
 
 "Online Form":{
-description:"सरकारी और अन्य ऑनलाइन फॉर्म भरने की सुविधा।",
-list:[
-"सरकारी नौकरी के फॉर्म",
-"Exam Form",
-"Scholarship Form",
-"Admission Form",
-"अन्य Online Forms"
-]
+ text:"सभी प्रकार के Online Form भरने की सुविधा।",
+ list:[
+  "सरकारी भर्ती Form",
+  "Scholarship Form",
+  "College / University Form",
+  "Exam Form",
+  "अन्य Online Applications"
+ ]
 },
 
 "PAN Card":{
-description:"PAN Card से संबंधित ऑनलाइन सेवाएँ।",
-list:[
-"नया PAN आवेदन",
-"PAN Correction",
-"PAN Download",
-"PAN से संबंधित अन्य सहायता"
-]
+ text:"PAN Card से संबंधित ऑनलाइन सेवाएं।",
+ list:[
+  "New PAN Application",
+  "PAN Correction",
+  "PAN Download",
+  "PAN Related Assistance"
+ ]
 },
 
 "Aadhaar":{
-description:"Aadhaar से संबंधित उपलब्ध ऑनलाइन सेवाएँ।",
-list:[
-"Aadhaar Download",
-"Aadhaar Update सहायता",
-"Mobile से संबंधित सहायता",
-"अन्य Aadhaar Services"
-]
+ text:"Aadhaar से संबंधित उपलब्ध ऑनलाइन सहायता।",
+ list:[
+  "Aadhaar Download",
+  "Aadhaar Status",
+  "Aadhaar PVC",
+  "Aadhaar Related Assistance"
+ ]
 },
 
 "Railway":{
-description:"Railway से संबंधित ऑनलाइन सेवाएँ।",
-list:[
-"Railway Ticket सहायता",
-"Railway Form",
-"Exam Form",
-"अन्य Railway Services"
-]
+ text:"Railway की ऑनलाइन सेवाओं में सहायता।",
+ list:[
+  "Train Ticket Assistance",
+  "PNR Check",
+  "Train Information",
+  "Railway Form Assistance"
+ ]
 },
 
 "Print / Scan":{
-description:"Printing और scanning की सुविधा।",
-list:[
-"Black & White Print",
-"Colour Print",
-"Document Scan",
-"Photocopy"
-]
+ text:"High Quality Printing और Scanning सुविधा।",
+ list:[
+  "Black & White Print",
+  "Color Print",
+  "Document Scan",
+  "Photocopy",
+  "Lamination"
+ ]
 },
 
 "Resume":{
-description:"Professional Resume बनाने की सुविधा।",
-list:[
-"Resume Typing",
-"Professional Resume",
-"Resume Correction",
-"Print"
-]
+ text:"Professional Resume और CV बनाने की सुविधा।",
+ list:[
+  "Fresh Resume",
+  "Professional CV",
+  "Job Resume",
+  "Resume Printing"
+ ]
 },
 
 "Passport Photo":{
-description:"Passport size photo की सुविधा।",
-list:[
-"Passport Photo",
-"Photo Editing",
-"Photo Print",
-"Multiple Photos"
-]
+ text:"Passport Size Photo की सुविधा।",
+ list:[
+  "Passport Photo",
+  "Visa Photo",
+  "ID Card Photo",
+  "Photo Editing",
+  "Photo Printing"
+ ]
 },
 
 "Online Services":{
-description:"विभिन्न Digital और Online Services।",
-list:[
-"Online Application",
-"Document Download",
-"Form Filling",
-"Digital Assistance"
-]
+ text:"विभिन्न Digital और Online Services में सहायता।",
+ list:[
+  "Government Services",
+  "Education Services",
+  "Job Services",
+  "Document Services",
+  "Online Application"
+ ]
 }
 
 };
-
 
 function openService(name){
 
-document.getElementById("modalTitle").innerText =
-"🔹 " + name;
+ document.getElementById("serviceModal").style.display="block";
 
-document.getElementById("modalDescription").innerText =
-serviceData[name].description;
+ document.getElementById("serviceTitle").innerText="🔹 "+name;
 
-let list =
-document.getElementById("modalList");
+ document.getElementById("serviceText").innerText=
+ serviceData[name].text;
 
-list.innerHTML="";
+ let list=document.getElementById("serviceList");
 
-serviceData[name].list.forEach(function(item){
+ list.innerHTML="";
 
-let li=document.createElement("li");
+ serviceData[name].list.forEach(function(item){
 
-li.innerText=item;
+   let li=document.createElement("li");
 
-list.appendChild(li);
+   li.innerText=item;
 
-});
+   list.appendChild(li);
 
-document.getElementById("serviceModal").style.display="block";
+ });
 
 }
 
+function closeService(){
 
-function closeModal(){
-
-document.getElementById("serviceModal").style.display="none";
+ document.getElementById("serviceModal").style.display="none";
 
 }
-
 
 window.onclick=function(event){
 
-let modal=document.getElementById("serviceModal");
+ let modal=document.getElementById("serviceModal");
 
-if(event.target==modal){
-
-modal.style.display="none";
+ if(event.target==modal){
+   modal.style.display="none";
+ }
 
 }
-
-};
-
 
 function searchService(){
 
-let input=document
-.getElementById("search")
-.value
-.toLowerCase();
+ let input=document
+ .getElementById("search")
+ .value
+ .toLowerCase();
 
-let services=document
-.getElementsByClassName("service");
+ let services=document
+ .getElementsByClassName("service");
 
-for(let i=0;i<services.length;i++){
+ for(let i=0;i<services.length;i++){
 
-let text=services[i]
-.innerText
-.toLowerCase();
+   let text=services[i]
+   .innerText
+   .toLowerCase();
 
-services[i].style.display =
-text.includes(input) ? "block" : "none";
+   if(text.includes(input)){
+     services[i].style.display="";
+   }else{
+     services[i].style.display="none";
+   }
 
-}
-
-}
-
-
-function callCafe(){
-
-window.location.href="tel:0000000000";
-
-}
-
-
-function whatsappCafe(){
-
-window.open(
-"https://wa.me/910000000000",
-"_blank"
-);
+ }
 
 }
 
