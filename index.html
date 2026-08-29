@@ -1,116 +1,40 @@
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+/* FLOATING CONTACT BUTTONS */
 
-<title>Trendz Online Hub | Motipur Muzaffarpur</title>
-
-<style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-  font-family:Arial,sans-serif;
+.floating-contact{
+  position:fixed;
+  right:18px;
+  bottom:20px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  z-index:9999;
 }
 
-body{
-  background:#f3f6fb;
-  color:#222;
-}
-
-header{
-  background:linear-gradient(135deg,#062b63,#087cff,#00b7ff);
+.float-btn{
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   color:white;
-  text-align:center;
-  padding:28px 15px;
-}
-
-.logo{
-  font-size:34px;
-  font-weight:bold;
-}
-
-.logo span{
-  color:#ffd21c;
-}
-
-header p{
-  margin-top:8px;
-  font-size:16px;
-}
-
-.address{
-  margin-top:10px;
-  font-size:14px;
-}
-
-.container{
-  max-width:1050px;
-  margin:auto;
-  padding:20px;
-}
-
-.welcome{
-  background:white;
-  padding:24px;
-  border-radius:18px;
-  margin-bottom:20px;
-  box-shadow:0 4px 18px rgba(0,0,0,.08);
-}
-
-.welcome h2{
-  color:#0757c9;
-  margin-bottom:10px;
-}
-
-.search{
-  width:100%;
-  padding:16px;
-  border:1px solid #ddd;
-  border-radius:13px;
-  font-size:17px;
-  margin-bottom:20px;
-  outline:none;
-}
-
-.section-title{
-  color:#0757c9;
-  margin:28px 0 15px;
-}
-
-.services{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
-  gap:16px;
-}
-
-.service{
-  background:white;
-  padding:21px 10px;
-  text-align:center;
-  border-radius:16px;
-  box-shadow:0 4px 15px rgba(0,0,0,.08);
-  cursor:pointer;
+  text-decoration:none;
+  font-size:25px;
+  box-shadow:0 4px 15px rgba(0,0,0,.25);
   transition:.2s;
 }
 
-.service:hover{
-  transform:translateY(-4px);
+.float-btn:hover{
+  transform:scale(1.1);
 }
 
-.icon{
-  font-size:38px;
-  margin-bottom:10px;
+.float-call{
+  background:#087cff;
 }
 
-.service h3{
-  font-size:16px;
-}
-
-.price{
-  display:inline-block;
-  margin-top:9px;
+.float-whatsapp{
+  background:#20c968;
+}  margin-top:9px;
   background:#e9f7ef;
   color:#168b55;
   padding:5px 9px;
@@ -1304,3 +1228,40 @@ document.getElementById("selectedPrice")
 document.getElementById("orderServiceName")
 .innerText=
 "आप "+s 
+/* FLOATING CONTACT BUTTONS */
+
+.floating-contact{
+  position:fixed;
+  right:18px;
+  bottom:20px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  z-index:9999;
+}
+
+.float-btn{
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  text-decoration:none;
+  font-size:25px;
+  box-shadow:0 4px 15px rgba(0,0,0,.25);
+  transition:.2s;
+}
+
+.float-btn:hover{
+  transform:scale(1.1);
+}
+
+.float-call{
+  background:#087cff;
+}
+
+.float-whatsapp{
+  background:#20c968;
+  }https://wa.me/918097686091?text=Hello%20Trendz%20Online%20Hub%2C%20mujhe%20service%20ke%20baare%20mein%20jaankari%20chahiye
