@@ -3,131 +3,347 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trendz Online Hub</title>
+
+<title>Trendz Online Hub | Motipur Muzaffarpur</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
-body{background:#f3f6fb;color:#222}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  background:#f3f6fb;
+  color:#222;
+}
+
 header{
-background:linear-gradient(135deg,#0757c9,#08a9ff);
-color:white;text-align:center;padding:28px 15px
+  background:linear-gradient(135deg,#062b63,#087cff,#00b7ff);
+  color:white;
+  text-align:center;
+  padding:28px 15px;
 }
-header h1{font-size:30px;margin-bottom:6px}
-header p{font-size:16px}
-.container{max-width:1050px;margin:auto;padding:20px}
-.welcome,.box{
-background:white;padding:22px;border-radius:16px;
-margin-bottom:20px;box-shadow:0 3px 15px rgba(0,0,0,.08)
+
+.logo{
+  font-size:34px;
+  font-weight:bold;
+  letter-spacing:.5px;
 }
-h2{color:#0757c9;margin-bottom:10px}
+
+.logo span{
+  color:#ffd21c;
+}
+
+header p{
+  margin-top:8px;
+  font-size:16px;
+}
+
+.address{
+  margin-top:10px;
+  font-size:14px;
+}
+
+.container{
+  max-width:1050px;
+  margin:auto;
+  padding:20px;
+}
+
+.welcome{
+  background:white;
+  padding:24px;
+  border-radius:18px;
+  margin-bottom:20px;
+  box-shadow:0 4px 18px rgba(0,0,0,.08);
+}
+
+.welcome h2{
+  color:#0757c9;
+  margin-bottom:10px;
+}
+
 .search{
-width:100%;padding:15px;border:1px solid #ddd;
-border-radius:12px;font-size:16px;margin-bottom:20px
+  width:100%;
+  padding:16px;
+  border:1px solid #ddd;
+  border-radius:13px;
+  font-size:17px;
+  margin-bottom:20px;
+  outline:none;
 }
+
+.section-title{
+  color:#0757c9;
+  margin:28px 0 15px;
+}
+
 .services{
-display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:15px
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
+  gap:16px;
 }
+
 .service{
-background:white;padding:22px 10px;text-align:center;
-border-radius:15px;box-shadow:0 3px 15px rgba(0,0,0,.08);
-cursor:pointer;transition:.2s
+  background:white;
+  padding:21px 10px;
+  text-align:center;
+  border-radius:16px;
+  box-shadow:0 4px 15px rgba(0,0,0,.08);
+  cursor:pointer;
+  transition:.2s;
 }
-.service:hover{transform:translateY(-4px)}
-.icon{font-size:40px;margin-bottom:8px}
-.service h3{font-size:17px}
+
+.service:hover{
+  transform:translateY(-4px);
+  box-shadow:0 7px 20px rgba(0,0,0,.14);
+}
+
+.icon{
+  font-size:38px;
+  margin-bottom:10px;
+}
+
+.service h3{
+  font-size:16px;
+}
+
+.price{
+  display:inline-block;
+  margin-top:9px;
+  background:#e9f7ef;
+  color:#168b55;
+  padding:5px 9px;
+  border-radius:20px;
+  font-size:13px;
+  font-weight:bold;
+}
+
+.contact-price{
+  background:#fff3cd;
+  color:#856404;
+}
 
 .price-list{
-display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:12px
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:12px;
 }
-.price{
-background:#f5f8ff;padding:15px;border-radius:12px
+
+.price-item{
+  background:white;
+  padding:16px;
+  border-radius:12px;
+  box-shadow:0 3px 12px rgba(0,0,0,.07);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
 }
-.price b{color:#0757c9}
+
+.price-item strong{
+  color:#333;
+}
+
+.price-value{
+  color:#0757c9;
+  font-weight:bold;
+  white-space:nowrap;
+}
+
+.gov-links{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:14px;
+}
+
+.gov-card{
+  background:white;
+  padding:18px;
+  border-radius:14px;
+  box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+.gov-card h3{
+  margin-bottom:8px;
+}
+
+.gov-card p{
+  font-size:14px;
+  color:#555;
+}
+
+.gov-card a{
+  display:block;
+  background:#0757c9;
+  color:white;
+  text-decoration:none;
+  padding:11px;
+  border-radius:9px;
+  text-align:center;
+  margin-top:12px;
+}
+
+.contact-box{
+  background:white;
+  margin-top:28px;
+  padding:24px;
+  border-radius:16px;
+  box-shadow:0 4px 15px rgba(0,0,0,.08);
+  text-align:center;
+}
+
+.contact-box p{
+  margin:8px 0;
+}
 
 .buttons{
-display:flex;gap:10px;flex-wrap:wrap;margin-top:12px
+  display:flex;
+  gap:12px;
+  margin-top:16px;
 }
+
 .btn{
-display:inline-block;padding:12px 16px;border-radius:9px;
-color:white;text-decoration:none;font-weight:bold;border:0;cursor:pointer
+  flex:1;
+  padding:14px;
+  border-radius:11px;
+  color:white;
+  text-decoration:none;
+  font-size:16px;
+  font-weight:bold;
 }
-.call{background:#198754}
-.whatsapp{background:#20c997}
-.map{background:#0757c9}
+
+.call{
+  background:#168b55;
+}
+
+.whatsapp{
+  background:#20c968;
+}
 
 .modal{
-display:none;position:fixed;z-index:1000;left:0;top:0;
-width:100%;height:100%;background:rgba(0,0,0,.65);
-padding:15px;overflow:auto
+  display:none;
+  position:fixed;
+  z-index:1000;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,.65);
+  padding:18px;
+  overflow:auto;
 }
+
 .modal-box{
-background:white;max-width:650px;margin:35px auto;
-padding:25px;border-radius:18px;position:relative
+  background:white;
+  max-width:600px;
+  margin:45px auto;
+  padding:25px;
+  border-radius:18px;
+  position:relative;
 }
+
 .close{
-position:absolute;right:16px;top:8px;
-font-size:32px;cursor:pointer
+  position:absolute;
+  right:18px;
+  top:9px;
+  font-size:30px;
+  cursor:pointer;
+  color:#777;
 }
 
-/* ALL FORMS */
-.category{
-margin-top:20px;
-border:1px solid #e1e6ef;
-border-radius:13px;
-overflow:hidden
-}
-.category-title{
-background:#0757c9;
-color:white;
-padding:13px 15px;
-font-size:18px;
-font-weight:bold
-}
-.form-row{
-padding:13px 15px;
-border-bottom:1px solid #eee;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:10px
-}
-.form-row:last-child{border-bottom:0}
-.form-name{font-weight:bold}
-.apply{
-background:#198754;
-color:white;
-text-decoration:none;
-padding:8px 12px;
-border-radius:7px;
-font-size:14px;
-white-space:nowrap
-}
-.note{
-background:#fff8e1;
-padding:12px;
-border-radius:10px;
-margin-top:18px;
-font-size:14px
+.modal h2{
+  color:#0757c9;
+  margin-bottom:14px;
 }
 
-.contact-card{
-background:#f5f8ff;
-padding:15px;margin-top:10px;border-radius:12px
+.modal p{
+  line-height:1.6;
+  margin-bottom:15px;
 }
+
+.portal{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:12px;
+  margin:9px 0;
+  background:#f1f5fa;
+  border-radius:10px;
+}
+
+.portal-name{
+  font-weight:bold;
+}
+
+.portal a{
+  background:#0757c9;
+  color:white;
+  text-decoration:none;
+  padding:8px 13px;
+  border-radius:8px;
+  font-size:14px;
+  white-space:nowrap;
+}
+
+.modal-call{
+  display:block;
+  background:#168b55;
+  color:white;
+  text-decoration:none;
+  text-align:center;
+  padding:13px;
+  border-radius:10px;
+  margin-top:18px;
+  font-weight:bold;
+}
+
 footer{
-background:#20252b;color:white;text-align:center;
-padding:22px;margin-top:30px
+  background:#20252b;
+  color:white;
+  text-align:center;
+  padding:22px;
+  margin-top:30px;
+}
+
+.footer-address{
+  margin-top:8px;
+  font-size:14px;
 }
 
 @media(max-width:600px){
-header h1{font-size:26px}
-.container{padding:15px}
-.services{grid-template-columns:repeat(2,1fr);gap:12px}
-.form-row{align-items:flex-start}
-.form-name{font-size:14px}
-.apply{font-size:13px;padding:7px 9px}
+
+  .logo{
+    font-size:29px;
+  }
+
+  .services{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .buttons{
+    flex-direction:column;
+  }
+
+  .price-item{
+    padding:14px;
+  }
+
+  .modal-box{
+    margin:35px auto;
+  }
+
+  .portal{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .portal a{
+    text-align:center;
+  }
 }
 </style>
 </head>
@@ -135,507 +351,843 @@ header h1{font-size:26px}
 <body>
 
 <header>
-<h1>Trendz Online Hub</h1>
-<p>आपकी सभी Online & Digital Services एक जगह</p>
+
+<div class="logo">
+Trend<span>z</span> Online Hub
+</div>
+
+<p>आपकी सभी Online सेवा एक जगह</p>
+
+<div class="address">
+📍 Motipur, Muzaffarpur, Bihar - 843111
+</div>
+
 </header>
+
 
 <div class="container">
 
 <div class="welcome">
+
 <h2>Welcome 👋</h2>
+
 <p>
 Trendz Online Hub में आपका स्वागत है।<br>
-Online Forms, PAN, Railway, Printing और अन्य Digital Services उपलब्ध हैं।
+Online Form, Government Services, PAN, Aadhaar,
+Railway, Printing, Resume और अन्य Digital Services के लिए हमसे संपर्क करें।
 </p>
+
 </div>
 
+
 <input
-class="search"
-id="search"
 type="text"
+id="search"
+class="search"
 placeholder="🔍 Service Search करें..."
-onkeyup="searchService()">
+onkeyup="searchService()"
+>
+
+
+<h2 class="section-title">💻 हमारी Services</h2>
 
 <div class="services">
 
-<div class="service" onclick="openForms()">
-<div class="icon">📋</div>
-<h3>All Forms</h3>
+
+<div class="service" onclick="openService('Online Form')">
+<div class="icon">📝</div>
+<h3>Online Form</h3>
+<div class="price">₹150</div>
 </div>
 
-<div class="service" onclick="openPAN()">
+
+<div class="service" onclick="openService('PAN Card')">
 <div class="icon">🪪</div>
 <h3>PAN Card</h3>
+<div class="price">₹200</div>
 </div>
+
 
 <div class="service" onclick="openService('Aadhaar')">
 <div class="icon">🆔</div>
 <h3>Aadhaar</h3>
+<div class="price contact-price">Contact</div>
 </div>
+
 
 <div class="service" onclick="openService('Railway')">
 <div class="icon">🚆</div>
 <h3>Railway</h3>
+<div class="price contact-price">Contact</div>
 </div>
+
 
 <div class="service" onclick="openService('Print / Scan')">
 <div class="icon">🖨️</div>
 <h3>Print / Scan</h3>
+<div class="price">From ₹3</div>
 </div>
+
 
 <div class="service" onclick="openService('Resume')">
 <div class="icon">📄</div>
-<h3>Resume</h3>
+<h3>Resume / CV</h3>
+<div class="price">₹100</div>
 </div>
+
 
 <div class="service" onclick="openService('Passport Photo')">
 <div class="icon">📸</div>
 <h3>Passport Photo</h3>
+<div class="price">₹60 / 8 Photos</div>
 </div>
+
+
+<div class="service" onclick="openService('Government Services')">
+<div class="icon">🏛️</div>
+<h3>Government Services</h3>
+<div class="price contact-price">Contact</div>
+</div>
+
+
+<div class="service" onclick="openService('Document Upload')">
+<div class="icon">📤</div>
+<h3>Document Upload</h3>
+<div class="price">₹50</div>
+</div>
+
+
+<div class="service" onclick="openService('Email Create')">
+<div class="icon">📧</div>
+<h3>Email Create</h3>
+<div class="price">₹50</div>
+</div>
+
+
+<div class="service" onclick="openService('Result Download')">
+<div class="icon">📊</div>
+<h3>Result Download</h3>
+<div class="price">₹20</div>
+</div>
+
+
+<div class="service" onclick="openService('Admit Card')">
+<div class="icon">🎫</div>
+<h3>Admit Card</h3>
+<div class="price">₹20</div>
+</div>
+
+
+<div class="service" onclick="openService('Form Correction')">
+<div class="icon">✏️</div>
+<h3>Form Correction</h3>
+<div class="price">₹50</div>
+</div>
+
 
 <div class="service" onclick="openService('Lamination')">
-<div class="icon">📑</div>
+<div class="icon">📋</div>
 <h3>Lamination</h3>
+<div class="price">₹30</div>
 </div>
 
+
 </div>
 
 
-<!-- PRICE LIST -->
-
-<div class="box">
-
-<h2>💰 Service Price List</h2>
+<h2 class="section-title">💰 Price List</h2>
 
 <div class="price-list">
 
-<div class="price">📸 Passport Photo<br><b>₹60 / 8 Photos</b></div>
 
-<div class="price">📝 Online Form<br><b>₹100</b></div>
+<div class="price-item">
+<strong>📝 Form Apply</strong>
+<span class="price-value">₹150</span>
+</div>
 
-<div class="price">🪪 PAN Card<br><b>₹200</b></div>
+<div class="price-item">
+<strong>🪪 PAN Card</strong>
+<span class="price-value">₹200</span>
+</div>
 
-<div class="price">🚆 Railway Ticket<br><b>₹150</b></div>
+<div class="price-item">
+<strong>🖨️ B&W Print – 1 Side</strong>
+<span class="price-value">₹5</span>
+</div>
 
-<div class="price">📄 Photocopy<br><b>₹3 / Page</b></div>
+<div class="price-item">
+<strong>🖨️ B&W Print – 2 Side</strong>
+<span class="price-value">₹10</span>
+</div>
 
-<div class="price">🖨️ B/W Print<br><b>₹5 / Page</b></div>
+<div class="price-item">
+<strong>🌈 Colour Print A4</strong>
+<span class="price-value">₹10</span>
+</div>
 
-<div class="price">🖨️ Colour Print<br><b>₹10 / Page</b></div>
+<div class="price-item">
+<strong>📄 Photocopy</strong>
+<span class="price-value">₹3</span>
+</div>
 
-<div class="price">📑 Scan<br><b>₹10 / Page</b></div>
+<div class="price-item">
+<strong>📑 Scan</strong>
+<span class="price-value">₹10</span>
+</div>
 
-<div class="price">📄 Resume<br><b>₹50</b></div>
+<div class="price-item">
+<strong>📋 Lamination</strong>
+<span class="price-value">₹30</span>
+</div>
 
-<div class="price">💧 Lamination<br><b>₹30</b></div>
+<div class="price-item">
+<strong>📸 Passport Photo – 8 Photos</strong>
+<span class="price-value">₹60</span>
+</div>
 
+<div class="price-item">
+<strong>📄 Resume / CV</strong>
+<span class="price-value">₹100</span>
+</div>
+
+<div class="price-item">
+<strong>📤 Document Upload</strong>
+<span class="price-value">₹50</span>
+</div>
+
+<div class="price-item">
+<strong>📧 Email Create</strong>
+<span class="price-value">₹50</span>
+</div>
+
+<div class="price-item">
+<strong>📊 Result Download</strong>
+<span class="price-value">₹20</span>
+</div>
+
+<div class="price-item">
+<strong>🎫 Admit Card Download</strong>
+<span class="price-value">₹20</span>
+</div>
+
+<div class="price-item">
+<strong>✏️ Form Correction</strong>
+<span class="price-value">₹50</span>
+</div>
+
+<div class="price-item">
+<strong>🆔 Aadhaar Services</strong>
+<span class="price-value">Contact for Price</span>
+</div>
+
+<div class="price-item">
+<strong>🚆 Railway Services</strong>
+<span class="price-value">Contact for Price</span>
+</div>
+
+<div class="price-item">
+<strong>🗳️ Voter Services</strong>
+<span class="price-value">Contact for Price</span>
+</div>
+
+<div class="price-item">
+<strong>📜 RTPS Services</strong>
+<span class="price-value">Contact for Price</span>
+</div>
+
+<div class="price-item">
+<strong>🚗 Driving Licence</strong>
+<span class="price-value">Contact for Price</span>
+</div>
+
+<div class="price-item">
+<strong>🎓 Scholarship</strong>
+<span class="price-value">Contact for Price</span>
 </div>
 
 </div>
 
 
-<!-- CONTACT -->
+<h2 class="section-title">
+🏛️ Important Official Websites
+</h2>
 
-<div class="box">
 
-<h2>📞 Contact Us</h2>
+<div class="gov-links">
 
-<div class="contact-card">
-<b>8097686091</b>
-<div class="buttons">
-<a class="btn call" href="tel:8097686091">📞 Call</a>
-<a class="btn whatsapp"
-href="https://wa.me/918097686091"
-target="_blank">💬 WhatsApp</a>
-</div>
-</div>
 
-<div class="contact-card">
-<b>9955760491</b>
-<div class="buttons">
-<a class="btn call" href="tel:9955760491">📞 Call</a>
-<a class="btn whatsapp"
-href="https://wa.me/919955760491"
-target="_blank">💬 WhatsApp</a>
-</div>
-</div>
-
-<div class="contact-card">
-📍 <b>Address</b><br>
-Motipur, Muzaffarpur, Bihar - 843111
-<br><br>
-<a class="btn map"
-href="https://www.google.com/maps/search/?api=1&query=Motipur+Muzaffarpur+Bihar+843111"
-target="_blank">📍 Google Maps</a>
-</div>
-
-</div>
-
+<div class="gov-card">
+<h3>🇮🇳 National Portal of India</h3>
+<p>भारत सरकार का official portal</p>
+<a href="https://www.india.gov.in/" target="_blank">
+Open Official Website
+</a>
 </div>
 
 
-<!-- ALL FORMS MODAL -->
+<div class="gov-card">
+<h3>🧾 Bihar RTPS</h3>
+<p>Bihar government online services</p>
+<a href="https://serviceonline.bihar.gov.in/" target="_blank">
+Open Official Website
+</a>
+</div>
 
-<div class="modal" id="formsModal">
 
-<div class="modal-box">
+<div class="gov-card">
+<h3>🆔 UIDAI Aadhaar</h3>
+<p>Aadhaar की official website</p>
+<a href="https://uidai.gov.in/" target="_blank">
+Open Official Website
+</a>
+</div>
 
-<span class="close" onclick="closeModal('formsModal')">×</span>
 
-<h2>📋 All Forms & Official Portals</h2>
+<div class="gov-card">
+<h3>🗳️ Voter Services</h3>
+<p>Election Commission services</p>
+<a href="https://voters.eci.gov.in/" target="_blank">
+Open Official Website
+</a>
+</div>
+
+
+<div class="gov-card">
+<h3>📚 UPSC</h3>
+<p>UPSC official website</p>
+<a href="https://www.upsc.gov.in/" target="_blank">
+Open Official Website
+</a>
+</div>
+
+
+<div class="gov-card">
+<h3>📚 SSC</h3>
+<p>Staff Selection Commission</p>
+<a href="https://ssc.gov.in/" target="_blank">
+Open Official Website
+</a>
+</div>
+
+
+<div class="gov-card">
+<h3>🎓 NTA</h3>
+<p>JEE, NEET, CUET आदि</p>
+<a href="https://www.nta.ac.in/" target="_blank">
+Open Official Website
+</a>
+</div>
+
+
+<div class="gov-card">
+<h3>🚆 IRCTC</h3>
+<p>Railway ticket booking</p>
+<a href="https://www.irctc.co.in/" target="_blank">
+Open Official Website
+</a>
+</div>
+
+
+<div class="gov-card">
+<h3>🚂 RRB Recruitment</h3>
+<p>Railway recruitment portal</p>
+<a href="https://www.rrbapply.gov.in/" target="_blank">
+Open Official Website
+</a>
+</div>
+
+
+<div class="gov-card">
+<h3>🛂 Passport Seva</h3>
+<p>Passport services</p>
+<a href="https://www.passportindia.gov.in/" target="_blank">
+Open Official Website
+</a>
+</div>
+
+
+<div class="gov-card">
+<h3>🚗 Parivahan</h3>
+<p>Driving Licence & vehicle services</p>
+<a href="https://parivahan.gov.in/" target="_blank">
+Open Official Website
+</a>
+</div>
+
+
+<div class="gov-card">
+<h3>💰 Income Tax</h3>
+<p>Income Tax e-Filing</p>
+<a href="https://www.incometax.gov.in/" target="_blank">
+Open Official Website
+</a>
+</div>
+
+
+<div class="gov-card">
+<h3>📁 DigiLocker</h3>
+<p>Digital documents</p>
+<a href="https://www.digilocker.gov.in/" target="_blank">
+Open Official Website
+</a>
+</div>
+
+
+<div class="gov-card">
+<h3>🏦 EPFO</h3>
+<p>PF related services</p>
+<a href="https://www.epfindia.gov.in/" target="_blank">
+Open Official Website
+</a>
+</div>
+
+
+<div class="gov-card">
+<h3>🧑‍💼 Udyam Registration</h3>
+<p>MSME registration</p>
+<a href="https://udyamregistration.gov.in/" target="_blank">
+Open Official Website
+</a>
+</div>
+
+
+<div class="gov-card">
+<h3>🧾 GST</h3>
+<p>GST official portal</p>
+<a href="https://www.gst.gov.in/" target="_blank">
+Open Official Website
+</a>
+</div>
+
+
+<div class="gov-card">
+<h3>👷 e-Shram</h3>
+<p>Unorganised workers services</p>
+<a href="https://eshram.gov.in/" target="_blank">
+Open Official Website
+</a>
+</div>
+
+
+<div class="gov-card">
+<h3>🌾 PM-KISAN</h3>
+<p>PM-KISAN services</p>
+<a href="https://pmkisan.gov.in/" target="_blank">
+Open Official Website
+</a>
+</div>
+
+
+</div>
+
+
+<div class="contact-box">
+
+<h2>📞 Contact Trendz Online Hub</h2>
+
+<p>📱 <strong>8097686091</strong></p>
+
+<p>📱 <strong>9955760491</strong></p>
 
 <p>
-नीचे अलग-अलग categories में उपलब्ध official portals दिए गए हैं।
+📍 Motipur, Muzaffarpur, Bihar - 843111
 </p>
 
 
-<!-- JOBS -->
-
-<div class="category">
-
-<div class="category-title">💼 Government Jobs</div>
-
-<div class="form-row">
-<span class="form-name">National Career Service</span>
-<a class="apply"
-href="https://www.ncs.gov.in/"
-target="_blank">Official Apply</a>
-</div>
-
-<div class="form-row">
-<span class="form-name">India Government Jobs / Services</span>
-<a class="apply"
-href="https://www.india.gov.in/"
-target="_blank">Open</a>
-</div>
-
-</div>
-
-
-<!-- SCHOLARSHIP -->
-
-<div class="category">
-
-<div class="category-title">🎓 Scholarship / Education</div>
-
-<div class="form-row">
-<span class="form-name">National Scholarship Portal</span>
-<a class="apply"
-href="https://scholarships.gov.in/"
-target="_blank">Official Apply</a>
-</div>
-
-<div class="form-row">
-<span class="form-name">NSP All Scholarships</span>
-<a class="apply"
-href="https://scholarships.gov.in/All-Scholarships"
-target="_blank">View Forms</a>
-</div>
-
-</div>
-
-
-<!-- DOCUMENT -->
-
-<div class="category">
-
-<div class="category-title">🪪 ID & Documents</div>
-
-<div class="form-row">
-<span class="form-name">PAN Card — Protean</span>
-<a class="apply"
-href="https://tinpan.proteantech.in/"
-target="_blank">Official Apply</a>
-</div>
-
-<div class="form-row">
-<span class="form-name">DigiLocker</span>
-<a class="apply"
-href="https://www.digilocker.gov.in/"
-target="_blank">Open</a>
-</div>
-
-<div class="form-row">
-<span class="form-name">e-Shram</span>
-<a class="apply"
-href="https://eshram.gov.in/"
-target="_blank">Official Apply</a>
-</div>
-
-</div>
-
-
-<!-- PASSPORT -->
-
-<div class="category">
-
-<div class="category-title">🛂 Passport</div>
-
-<div class="form-row">
-<span class="form-name">Passport Seva</span>
-<a class="apply"
-href="https://www.passportindia.gov.in/"
-target="_blank">Official Apply</a>
-</div>
-
-</div>
-
-
-<!-- VOTER -->
-
-<div class="category">
-
-<div class="category-title">🗳️ Election / Voter</div>
-
-<div class="form-row">
-<span class="form-name">Voters' Services Portal</span>
-<a class="apply"
-href="https://voters.eci.gov.in/"
-target="_blank">Official Apply</a>
-</div>
-
-</div>
-
-
-<!-- DRIVING -->
-
-<div class="category">
-
-<div class="category-title">🚗 Driving Licence / Vehicle</div>
-
-<div class="form-row">
-<span class="form-name">Parivahan Sewa</span>
-<a class="apply"
-href="https://parivahan.gov.in/"
-target="_blank">Official Portal</a>
-</div>
-
-</div>
-
-
-<!-- GOVERNMENT SERVICES -->
-
-<div class="category">
-
-<div class="category-title">🏛️ Government Services</div>
-
-<div class="form-row">
-<span class="form-name">National Government Services Portal</span>
-<a class="apply"
-href="https://services.india.gov.in/"
-target="_blank">Open</a>
-</div>
-
-<div class="form-row">
-<span class="form-name">National Portal of India</span>
-<a class="apply"
-href="https://www.india.gov.in/"
-target="_blank">Open</a>
-</div>
-
-</div>
-
-
-<!-- RAILWAY -->
-
-<div class="category">
-
-<div class="category-title">🚆 Railway</div>
-
-<div class="form-row">
-<span class="form-name">IRCTC</span>
-<a class="apply"
-href="https://www.irctc.co.in/"
-target="_blank">Official Portal</a>
-</div>
-
-</div>
-
-
-<div class="note">
-⚠️ <b>Important:</b> ये links संबंधित official portals पर ले जाते हैं।
-Application की eligibility, government fee और अंतिम submission से पहले
-portal पर दी गई जानकारी जरूर check करें।
-</div>
-
-</div>
-</div>
-
-
-<!-- PAN MODAL -->
-
-<div class="modal" id="panModal">
-
-<div class="modal-box">
-
-<span class="close" onclick="closeModal('panModal')">×</span>
-
-<h2>🪪 PAN Card Services</h2>
-
-<div class="category">
-
-<div class="form-row">
-<span class="form-name">New PAN / Correction</span>
-<a class="apply"
-href="https://tinpan.proteantech.in/"
-target="_blank">Official Portal</a>
-</div>
-
-<div class="form-row">
-<span class="form-name">Income Tax Instant e-PAN</span>
-<a class="apply"
-href="https://www.incometax.gov.in/"
-target="_blank">Official Portal</a>
-</div>
-
-</div>
-
-</div>
-</div>
-
-
-<!-- GENERAL SERVICE MODAL -->
-
-<div class="modal" id="serviceModal">
-
-<div class="modal-box">
-
-<span class="close" onclick="closeModal('serviceModal')">×</span>
-
-<h2 id="serviceTitle"></h2>
-
-<p id="serviceText"></p>
-
-<ul id="serviceList"></ul>
-
-<br>
-
-<a class="btn call" href="tel:8097686091">
+<div class="buttons">
+
+<a
+class="btn call"
+href="tel:8097686091">
 📞 Call 8097686091
 </a>
 
-<a class="btn whatsapp"
+<a
+class="btn whatsapp"
 href="https://wa.me/918097686091"
 target="_blank">
 💬 WhatsApp
 </a>
 
 </div>
+
+
+<div class="buttons">
+
+<a
+class="btn call"
+href="tel:9955760491">
+📞 Call 9955760491
+</a>
+
+<a
+class="btn whatsapp"
+href="https://wa.me/919955760491"
+target="_blank">
+💬 WhatsApp
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- SERVICE POPUP -->
+
+<div class="modal" id="serviceModal">
+
+<div class="modal-box">
+
+<span class="close" onclick="closeService()">×</span>
+
+<h2 id="serviceTitle"></h2>
+
+<div id="serviceContent"></div>
+
+</div>
+
 </div>
 
 
 <footer>
 
-<b>Trendz Online Hub</b><br>
-Motipur, Muzaffarpur, Bihar - 843111<br>
-8097686091 | 9955760491<br><br>
+<strong>Trendz Online Hub</strong>
+
+<div class="footer-address">
+📍 Motipur, Muzaffarpur, Bihar - 843111
+</div>
+
+<p style="margin-top:8px;">
+📞 8097686091 | 9955760491
+</p>
+
+<p style="margin-top:8px;">
 © 2026 Trendz Online Hub
+</p>
 
 </footer>
 
 
 <script>
 
-const data={
+function portal(name,url){
 
-"Aadhaar":{
-text:"Aadhaar से संबंधित सेवाओं में सहायता।",
-list:[
-"Aadhaar Download",
-"Aadhaar Status",
-"Aadhaar related assistance"
-]
-},
+return `
+<div class="portal">
 
-"Railway":{
-text:"Railway की online services।",
-list:[
-"Train Information",
-"PNR Assistance",
-"Ticket Assistance"
-]
-},
+<div class="portal-name">
+${name}
+</div>
 
-"Print / Scan":{
-text:"Printing और scanning services।",
-list:[
-"Black & White Print",
-"Colour Print",
-"Photocopy",
-"Document Scan"
-]
-},
+<a href="${url}" target="_blank">
+Open
+</a>
 
-"Resume":{
-text:"Resume और CV बनाने की सुविधा।",
-list:[
-"Fresh Resume",
-"Job Resume",
-"CV Printing"
-]
-},
+</div>
+`;
 
-"Passport Photo":{
-text:"Passport और ID photo services।",
-list:[
-"Passport Size Photo",
-"8 Photos ₹60",
-"Photo Printing"
-]
-},
-
-"Lamination":{
-text:"Document lamination service।",
-list:[
-"Certificate",
-"ID Card",
-"Documents"
-]
 }
+
+
+function callButton(){
+
+return `
+<a
+class="modal-call"
+href="tel:8097686091">
+
+📞 Service के लिए Call करें
+
+</a>
+`;
+
+}
+
+
+const serviceData={
+
+
+"Online Form":`
+
+<p>
+Online Form Apply की service available है।
+</p>
+
+<p><strong>Service Charge: ₹150</strong></p>
+
+${portal("🇮🇳 National Portal of India",
+"https://www.india.gov.in/")}
+
+${portal("🧾 Bihar RTPS",
+"https://serviceonline.bihar.gov.in/")}
+
+${portal("📚 UPSC",
+"https://www.upsc.gov.in/")}
+
+${portal("📚 SSC",
+"https://ssc.gov.in/")}
+
+${portal("🎓 NTA",
+"https://www.nta.ac.in/")}
+
+${portal("🗳️ Voter Services",
+"https://voters.eci.gov.in/")}
+
+${portal("🚂 RRB Recruitment",
+"https://www.rrbapply.gov.in/")}
+
+${portal("🛂 Passport Seva",
+"https://www.passportindia.gov.in/")}
+
+${portal("🚗 Parivahan",
+"https://parivahan.gov.in/")}
+
+`,
+
+
+"PAN Card":`
+
+<p>
+PAN Card application assistance available है।
+</p>
+
+<p><strong>Service Charge: ₹200</strong></p>
+
+${portal("💰 Income Tax Official Portal",
+"https://www.incometax.gov.in/")}
+
+`,
+
+
+"Aadhaar":`
+
+<p>
+Aadhaar related assistance available है।
+</p>
+
+<p><strong>Price: Contact for Price</strong></p>
+
+${portal("🆔 UIDAI Official Website",
+"https://uidai.gov.in/")}
+
+${portal("📁 DigiLocker",
+"https://www.digilocker.gov.in/")}
+
+${callButton()}
+
+`,
+
+
+"Railway":`
+
+<p>
+Railway related services के लिए संपर्क करें।
+</p>
+
+<p><strong>Price: Contact for Price</strong></p>
+
+${portal("🚆 IRCTC Official",
+"https://www.irctc.co.in/")}
+
+${portal("🚂 RRB Recruitment",
+"https://www.rrbapply.gov.in/")}
+
+${callButton()}
+
+`,
+
+
+"Government Services":`
+
+<p>
+Government services के लिए official portals:
+</p>
+
+<p><strong>Price: Contact for Price</strong></p>
+
+${portal("🇮🇳 National Portal",
+"https://www.india.gov.in/")}
+
+${portal("🧾 Bihar RTPS",
+"https://serviceonline.bihar.gov.in/")}
+
+${portal("🆔 UIDAI",
+"https://uidai.gov.in/")}
+
+${portal("🗳️ Voter Services",
+"https://voters.eci.gov.in/")}
+
+${portal("🛂 Passport Seva",
+"https://www.passportindia.gov.in/")}
+
+${portal("🚗 Parivahan",
+"https://parivahan.gov.in/")}
+
+${portal("💰 Income Tax",
+"https://www.incometax.gov.in/")}
+
+${portal("📁 DigiLocker",
+"https://www.digilocker.gov.in/")}
+
+`,
+
+
+"Print / Scan":`
+
+<p>
+Printing और Scanning services उपलब्ध हैं।
+</p>
+
+<ul>
+<li>B&W Print – 1 Side: ₹5</li>
+<li>B&W Print – 2 Side: ₹10</li>
+<li>Colour Print A4: ₹10</li>
+<li>Photocopy: ₹3</li>
+<li>Scan: ₹10</li>
+</ul>
+
+${callButton()}
+
+`,
+
+
+"Resume":`
+
+<p>
+Professional Resume / CV बनाने की सुविधा।
+</p>
+
+<p><strong>Price: ₹100</strong></p>
+
+${callButton()}
+
+`,
+
+
+"Passport Photo":`
+
+<p>
+Passport Size Photo service available है।
+</p>
+
+<p><strong>8 Photos: ₹60</strong></p>
+
+${callButton()}
+
+`,
+
+
+"Document Upload":`
+
+<p>
+Online Document Upload service उपलब्ध है।
+</p>
+
+<p><strong>Price: ₹50</strong></p>
+
+${callButton()}
+
+`,
+
+
+"Email Create":`
+
+<p>
+New Email Account बनाने की सहायता।
+</p>
+
+<p><strong>Price: ₹50</strong></p>
+
+${callButton()}
+
+`,
+
+
+"Result Download":`
+
+<p>
+Online Result Download service।
+</p>
+
+<p><strong>Price: ₹20</strong></p>
+
+${callButton()}
+
+`,
+
+
+"Admit Card":`
+
+<p>
+Online Admit Card Download service।
+</p>
+
+<p><strong>Price: ₹20</strong></p>
+
+${callButton()}
+
+`,
+
+
+"Form Correction":`
+
+<p>
+Online Form Correction assistance।
+</p>
+
+<p><strong>Price: ₹50</strong></p>
+
+${callButton()}
+
+`,
+
+
+"Lamination":`
+
+<p>
+Document Lamination service।
+</p>
+
+<p><strong>Price: ₹30</strong></p>
+
+${callButton()}
+
+`
 
 };
 
-
-function openForms(){
-document.getElementById("formsModal").style.display="block";
-}
-
-function openPAN(){
-document.getElementById("panModal").style.display="block";
-}
 
 function openService(name){
 
 document.getElementById("serviceModal").style.display="block";
 
-document.getElementById("serviceTitle").innerText="🔹 "+name;
+document.getElementById("serviceTitle").innerText=
+"🔹 "+name;
 
-document.getElementById("serviceText").innerText=data[name].text;
-
-let list=document.getElementById("serviceList");
-
-list.innerHTML="";
-
-data[name].list.forEach(function(item){
-
-let li=document.createElement("li");
-li.innerText=item;
-list.appendChild(li);
-
-});
+document.getElementById("serviceContent").innerHTML=
+serviceData[name];
 
 }
 
 
-function closeModal(id){
-document.getElementById(id).style.display="none";
+function closeService(){
+
+document.getElementById("serviceModal").style.display="none";
+
 }
 
 
-window.onclick=function(e){
+window.onclick=function(event){
 
-if(e.target.classList.contains("modal")){
-e.target.style.display="none";
+let modal=
+document.getElementById("serviceModal");
+
+if(event.target===modal){
+
+modal.style.display="none";
+
 }
 
 };
@@ -643,22 +1195,36 @@ e.target.style.display="none";
 
 function searchService(){
 
-let input=document.getElementById("search").value.toLowerCase();
+let input=
+document.getElementById("search")
+.value
+.toLowerCase();
 
-let services=document.querySelectorAll(".service");
+let services=
+document.getElementsByClassName("service");
 
-services.forEach(function(item){
+for(let i=0;i<services.length;i++){
 
-let text=item.innerText.toLowerCase();
+let text=
+services[i]
+.innerText
+.toLowerCase();
 
-item.style.display=
-text.includes(input) ? "block" : "none";
+if(text.includes(input)){
 
-});
+services[i].style.display="";
+
+}else{
+
+services[i].style.display="none";
+
+}
+
+}
 
 }
 
 </script>
 
 </body>
-  </html>
+                       </html>
