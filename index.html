@@ -126,6 +126,89 @@ footer{
   padding:18px;
   font-size:13px;
 }
+
+/* POPUP */
+
+.modal{
+  display:none;
+  position:fixed;
+  z-index:1000;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,.55);
+  padding:20px;
+}
+
+.modal-box{
+  background:white;
+  max-width:450px;
+  margin:80px auto;
+  border-radius:16px;
+  padding:25px;
+  position:relative;
+  animation:popup .2s ease;
+}
+
+@keyframes popup{
+  from{
+    transform:scale(.8);
+    opacity:0;
+  }
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
+}
+
+.close{
+  position:absolute;
+  right:15px;
+  top:10px;
+  font-size:28px;
+  cursor:pointer;
+  color:#777;
+}
+
+.modal-box h2{
+  color:#0757c9;
+  margin-bottom:12px;
+}
+
+.modal-box p{
+  line-height:1.6;
+  margin-bottom:12px;
+}
+
+.modal-box ul{
+  margin-left:20px;
+  line-height:1.8;
+}
+
+.modal-buttons{
+  display:flex;
+  gap:10px;
+  margin-top:20px;
+}
+
+.modal-buttons a{
+  flex:1;
+  text-align:center;
+  text-decoration:none;
+  color:white;
+  padding:12px;
+  border-radius:9px;
+  font-weight:bold;
+}
+
+.call-link{
+  background:#198754;
+}
+
+.whatsapp-link{
+  background:#25d366;
+}
 </style>
 </head>
 
@@ -154,44 +237,44 @@ footer{
     onkeyup="searchService()"
   >
 
-  <div class="services" id="services">
+  <div class="services">
 
-    <div class="service" onclick="service('Online Form')">
+    <div class="service" onclick="openService('Online Form')">
       <div class="icon">📝</div>
       <h3>Online Form</h3>
     </div>
 
-    <div class="service" onclick="service('PAN Card')">
+    <div class="service" onclick="openService('PAN Card')">
       <div class="icon">🪪</div>
       <h3>PAN Card</h3>
     </div>
 
-    <div class="service" onclick="service('Aadhaar')">
+    <div class="service" onclick="openService('Aadhaar')">
       <div class="icon">🆔</div>
       <h3>Aadhaar</h3>
     </div>
 
-    <div class="service" onclick="service('Railway')">
+    <div class="service" onclick="openService('Railway')">
       <div class="icon">🚆</div>
       <h3>Railway</h3>
     </div>
 
-    <div class="service" onclick="service('Print Scan')">
+    <div class="service" onclick="openService('Print / Scan')">
       <div class="icon">🖨️</div>
       <h3>Print / Scan</h3>
     </div>
 
-    <div class="service" onclick="service('Resume')">
+    <div class="service" onclick="openService('Resume')">
       <div class="icon">📄</div>
       <h3>Resume</h3>
     </div>
 
-    <div class="service" onclick="service('Passport Photo')">
+    <div class="service" onclick="openService('Passport Photo')">
       <div class="icon">📸</div>
       <h3>Passport Photo</h3>
     </div>
 
-    <div class="service" onclick="service('Online Services')">
+    <div class="service" onclick="openService('Online Services')">
       <div class="icon">💻</div>
       <h3>Online Services</h3>
     </div>
@@ -216,42 +299,212 @@ footer{
   © 2026 Smart Link Cyber Cafe
 </footer>
 
+
+<!-- SERVICE POPUP -->
+
+<div id="serviceModal" class="modal">
+
+  <div class="modal-box">
+
+    <span class="close" onclick="closeModal()">×</span>
+
+    <h2 id="modalTitle"></h2>
+
+    <p id="modalDescription"></p>
+
+    <ul id="modalList"></ul>
+
+    <div class="modal-buttons">
+
+      <a href="tel:0000000000" class="call-link">
+        📞 Call
+      </a>
+
+      <a href="https://wa.me/910000000000" class="whatsapp-link">
+        💬 WhatsApp
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+
 <script>
 
-function service(name){
-  alert("आपने " + name + " Service चुनी है।");
+const serviceData = {
+
+"Online Form":{
+description:"सरकारी और अन्य ऑनलाइन फॉर्म भरने की सुविधा।",
+list:[
+"सरकारी नौकरी के फॉर्म",
+"Exam Form",
+"Scholarship Form",
+"Admission Form",
+"अन्य Online Forms"
+]
+},
+
+"PAN Card":{
+description:"PAN Card से संबंधित ऑनलाइन सेवाएँ।",
+list:[
+"नया PAN आवेदन",
+"PAN Correction",
+"PAN Download",
+"PAN से संबंधित अन्य सहायता"
+]
+},
+
+"Aadhaar":{
+description:"Aadhaar से संबंधित उपलब्ध ऑनलाइन सेवाएँ।",
+list:[
+"Aadhaar Download",
+"Aadhaar Update सहायता",
+"Mobile से संबंधित सहायता",
+"अन्य Aadhaar Services"
+]
+},
+
+"Railway":{
+description:"Railway से संबंधित ऑनलाइन सेवाएँ।",
+list:[
+"Railway Ticket सहायता",
+"Railway Form",
+"Exam Form",
+"अन्य Railway Services"
+]
+},
+
+"Print / Scan":{
+description:"Printing और scanning की सुविधा।",
+list:[
+"Black & White Print",
+"Colour Print",
+"Document Scan",
+"Photocopy"
+]
+},
+
+"Resume":{
+description:"Professional Resume बनाने की सुविधा।",
+list:[
+"Resume Typing",
+"Professional Resume",
+"Resume Correction",
+"Print"
+]
+},
+
+"Passport Photo":{
+description:"Passport size photo की सुविधा।",
+list:[
+"Passport Photo",
+"Photo Editing",
+"Photo Print",
+"Multiple Photos"
+]
+},
+
+"Online Services":{
+description:"विभिन्न Digital और Online Services।",
+list:[
+"Online Application",
+"Document Download",
+"Form Filling",
+"Digital Assistance"
+]
 }
+
+};
+
+
+function openService(name){
+
+document.getElementById("modalTitle").innerText =
+"🔹 " + name;
+
+document.getElementById("modalDescription").innerText =
+serviceData[name].description;
+
+let list =
+document.getElementById("modalList");
+
+list.innerHTML="";
+
+serviceData[name].list.forEach(function(item){
+
+let li=document.createElement("li");
+
+li.innerText=item;
+
+list.appendChild(li);
+
+});
+
+document.getElementById("serviceModal").style.display="block";
+
+}
+
+
+function closeModal(){
+
+document.getElementById("serviceModal").style.display="none";
+
+}
+
+
+window.onclick=function(event){
+
+let modal=document.getElementById("serviceModal");
+
+if(event.target==modal){
+
+modal.style.display="none";
+
+}
+
+};
+
 
 function searchService(){
 
-  let input=document
-    .getElementById("search")
-    .value
-    .toLowerCase();
+let input=document
+.getElementById("search")
+.value
+.toLowerCase();
 
-  let services=document
-    .getElementsByClassName("service");
+let services=document
+.getElementsByClassName("service");
 
-  for(let i=0;i<services.length;i++){
+for(let i=0;i<services.length;i++){
 
-    let text=services[i]
-      .innerText
-      .toLowerCase();
+let text=services[i]
+.innerText
+.toLowerCase();
 
-    if(text.includes(input)){
-      services[i].style.display="block";
-    }else{
-      services[i].style.display="none";
-    }
-  }
+services[i].style.display =
+text.includes(input) ? "block" : "none";
+
 }
+
+}
+
 
 function callCafe(){
-  alert("अभी Contact Number सेट नहीं किया गया है।");
+
+window.location.href="tel:0000000000";
+
 }
 
+
 function whatsappCafe(){
-  alert("अभी WhatsApp Number सेट नहीं किया गया है।");
+
+window.open(
+"https://wa.me/910000000000",
+"_blank"
+);
+
 }
 
 </script>
