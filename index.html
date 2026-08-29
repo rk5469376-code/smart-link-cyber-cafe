@@ -29,7 +29,6 @@ header{
 .logo{
   font-size:34px;
   font-weight:bold;
-  letter-spacing:.5px;
 }
 
 .logo span{
@@ -98,7 +97,6 @@ header p{
 
 .service:hover{
   transform:translateY(-4px);
-  box-shadow:0 7px 20px rgba(0,0,0,.14);
 }
 
 .icon{
@@ -141,10 +139,6 @@ header p{
   justify-content:space-between;
   align-items:center;
   gap:10px;
-}
-
-.price-item strong{
-  color:#333;
 }
 
 .price-value{
@@ -213,6 +207,8 @@ header p{
   text-decoration:none;
   font-size:16px;
   font-weight:bold;
+  border:0;
+  cursor:pointer;
 }
 
 .call{
@@ -222,6 +218,21 @@ header p{
 .whatsapp{
   background:#20c968;
 }
+
+.order-btn{
+  width:100%;
+  background:#20c968;
+  color:white;
+  border:0;
+  padding:14px;
+  border-radius:10px;
+  margin-top:18px;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* MODAL */
 
 .modal{
   display:none;
@@ -286,19 +297,69 @@ header p{
   padding:8px 13px;
   border-radius:8px;
   font-size:14px;
-  white-space:nowrap;
 }
 
-.modal-call{
+/* ORDER FORM */
+
+.order-form{
+  margin-top:15px;
+}
+
+.order-form label{
   display:block;
-  background:#168b55;
-  color:white;
-  text-decoration:none;
-  text-align:center;
-  padding:13px;
-  border-radius:10px;
-  margin-top:18px;
   font-weight:bold;
+  margin-top:13px;
+  margin-bottom:6px;
+}
+
+.order-form input,
+.order-form select,
+.order-form textarea{
+  width:100%;
+  padding:13px;
+  border:1px solid #ccc;
+  border-radius:9px;
+  font-size:15px;
+  outline:none;
+}
+
+.order-form textarea{
+  min-height:90px;
+  resize:vertical;
+}
+
+.whatsapp-choice{
+  display:flex;
+  gap:10px;
+  margin-top:8px;
+}
+
+.whatsapp-choice label{
+  flex:1;
+  margin:0;
+  background:#f1f5fa;
+  padding:12px;
+  border-radius:9px;
+  text-align:center;
+  cursor:pointer;
+}
+
+.whatsapp-choice input{
+  width:auto;
+  margin-right:5px;
+}
+
+.send-order{
+  width:100%;
+  background:#20c968;
+  color:white;
+  border:0;
+  padding:15px;
+  border-radius:10px;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+  margin-top:18px;
 }
 
 footer{
@@ -328,10 +389,6 @@ footer{
     flex-direction:column;
   }
 
-  .price-item{
-    padding:14px;
-  }
-
   .modal-box{
     margin:35px auto;
   }
@@ -344,11 +401,17 @@ footer{
   .portal a{
     text-align:center;
   }
+
+  .whatsapp-choice{
+    flex-direction:column;
+  }
 }
 </style>
 </head>
 
+
 <body>
+
 
 <header>
 
@@ -366,6 +429,7 @@ Trend<span>z</span> Online Hub
 
 
 <div class="container">
+
 
 <div class="welcome">
 
@@ -391,101 +455,116 @@ onkeyup="searchService()"
 
 <h2 class="section-title">💻 हमारी Services</h2>
 
+
 <div class="services">
 
 
-<div class="service" onclick="openService('Online Form')">
+<div class="service"
+onclick="openService('Online Form')">
 <div class="icon">📝</div>
 <h3>Online Form</h3>
 <div class="price">₹150</div>
 </div>
 
 
-<div class="service" onclick="openService('PAN Card')">
+<div class="service"
+onclick="openService('PAN Card')">
 <div class="icon">🪪</div>
 <h3>PAN Card</h3>
 <div class="price">₹200</div>
 </div>
 
 
-<div class="service" onclick="openService('Aadhaar')">
+<div class="service"
+onclick="openService('Aadhaar')">
 <div class="icon">🆔</div>
 <h3>Aadhaar</h3>
 <div class="price contact-price">Contact</div>
 </div>
 
 
-<div class="service" onclick="openService('Railway')">
+<div class="service"
+onclick="openService('Railway')">
 <div class="icon">🚆</div>
 <h3>Railway</h3>
 <div class="price contact-price">Contact</div>
 </div>
 
 
-<div class="service" onclick="openService('Print / Scan')">
+<div class="service"
+onclick="openService('Print / Scan')">
 <div class="icon">🖨️</div>
 <h3>Print / Scan</h3>
 <div class="price">From ₹3</div>
 </div>
 
 
-<div class="service" onclick="openService('Resume')">
+<div class="service"
+onclick="openService('Resume')">
 <div class="icon">📄</div>
 <h3>Resume / CV</h3>
 <div class="price">₹100</div>
 </div>
 
 
-<div class="service" onclick="openService('Passport Photo')">
+<div class="service"
+onclick="openService('Passport Photo')">
 <div class="icon">📸</div>
 <h3>Passport Photo</h3>
 <div class="price">₹60 / 8 Photos</div>
 </div>
 
 
-<div class="service" onclick="openService('Government Services')">
+<div class="service"
+onclick="openService('Government Services')">
 <div class="icon">🏛️</div>
 <h3>Government Services</h3>
 <div class="price contact-price">Contact</div>
 </div>
 
 
-<div class="service" onclick="openService('Document Upload')">
+<div class="service"
+onclick="openService('Document Upload')">
 <div class="icon">📤</div>
 <h3>Document Upload</h3>
 <div class="price">₹50</div>
 </div>
 
 
-<div class="service" onclick="openService('Email Create')">
+<div class="service"
+onclick="openService('Email Create')">
 <div class="icon">📧</div>
 <h3>Email Create</h3>
 <div class="price">₹50</div>
 </div>
 
 
-<div class="service" onclick="openService('Result Download')">
+<div class="service"
+onclick="openService('Result Download')">
 <div class="icon">📊</div>
 <h3>Result Download</h3>
 <div class="price">₹20</div>
 </div>
 
 
-<div class="service" onclick="openService('Admit Card')">
+<div class="service"
+onclick="openService('Admit Card')">
 <div class="icon">🎫</div>
 <h3>Admit Card</h3>
 <div class="price">₹20</div>
 </div>
 
 
-<div class="service" onclick="openService('Form Correction')">
+<div class="service"
+onclick="openService('Form Correction')">
 <div class="icon">✏️</div>
 <h3>Form Correction</h3>
 <div class="price">₹50</div>
 </div>
 
 
-<div class="service" onclick="openService('Lamination')">
+<div class="service"
+onclick="openService('Lamination')">
 <div class="icon">📋</div>
 <h3>Lamination</h3>
 <div class="price">₹30</div>
@@ -497,8 +576,8 @@ onkeyup="searchService()"
 
 <h2 class="section-title">💰 Price List</h2>
 
-<div class="price-list">
 
+<div class="price-list">
 
 <div class="price-item">
 <strong>📝 Form Apply</strong>
@@ -577,32 +656,22 @@ onkeyup="searchService()"
 
 <div class="price-item">
 <strong>🆔 Aadhaar Services</strong>
-<span class="price-value">Contact for Price</span>
+<span class="price-value">Contact</span>
 </div>
 
 <div class="price-item">
 <strong>🚆 Railway Services</strong>
-<span class="price-value">Contact for Price</span>
+<span class="price-value">Contact</span>
 </div>
 
 <div class="price-item">
 <strong>🗳️ Voter Services</strong>
-<span class="price-value">Contact for Price</span>
+<span class="price-value">Contact</span>
 </div>
 
 <div class="price-item">
 <strong>📜 RTPS Services</strong>
-<span class="price-value">Contact for Price</span>
-</div>
-
-<div class="price-item">
-<strong>🚗 Driving Licence</strong>
-<span class="price-value">Contact for Price</span>
-</div>
-
-<div class="price-item">
-<strong>🎓 Scholarship</strong>
-<span class="price-value">Contact for Price</span>
+<span class="price-value">Contact</span>
 </div>
 
 </div>
@@ -614,15 +683,6 @@ onkeyup="searchService()"
 
 
 <div class="gov-links">
-
-
-<div class="gov-card">
-<h3>🇮🇳 National Portal of India</h3>
-<p>भारत सरकार का official portal</p>
-<a href="https://www.india.gov.in/" target="_blank">
-Open Official Website
-</a>
-</div>
 
 
 <div class="gov-card">
@@ -671,27 +731,9 @@ Open Official Website
 
 
 <div class="gov-card">
-<h3>🎓 NTA</h3>
-<p>JEE, NEET, CUET आदि</p>
-<a href="https://www.nta.ac.in/" target="_blank">
-Open Official Website
-</a>
-</div>
-
-
-<div class="gov-card">
 <h3>🚆 IRCTC</h3>
 <p>Railway ticket booking</p>
 <a href="https://www.irctc.co.in/" target="_blank">
-Open Official Website
-</a>
-</div>
-
-
-<div class="gov-card">
-<h3>🚂 RRB Recruitment</h3>
-<p>Railway recruitment portal</p>
-<a href="https://www.rrbapply.gov.in/" target="_blank">
 Open Official Website
 </a>
 </div>
@@ -743,36 +785,9 @@ Open Official Website
 
 
 <div class="gov-card">
-<h3>🧑‍💼 Udyam Registration</h3>
-<p>MSME registration</p>
-<a href="https://udyamregistration.gov.in/" target="_blank">
-Open Official Website
-</a>
-</div>
-
-
-<div class="gov-card">
 <h3>🧾 GST</h3>
 <p>GST official portal</p>
 <a href="https://www.gst.gov.in/" target="_blank">
-Open Official Website
-</a>
-</div>
-
-
-<div class="gov-card">
-<h3>👷 e-Shram</h3>
-<p>Unorganised workers services</p>
-<a href="https://eshram.gov.in/" target="_blank">
-Open Official Website
-</a>
-</div>
-
-
-<div class="gov-card">
-<h3>🌾 PM-KISAN</h3>
-<p>PM-KISAN services</p>
-<a href="https://pmkisan.gov.in/" target="_blank">
 Open Official Website
 </a>
 </div>
@@ -834,7 +849,7 @@ target="_blank">
 </div>
 
 
-<!-- SERVICE POPUP -->
+<!-- SERVICE MODAL -->
 
 <div class="modal" id="serviceModal">
 
@@ -845,6 +860,108 @@ target="_blank">
 <h2 id="serviceTitle"></h2>
 
 <div id="serviceContent"></div>
+
+</div>
+
+</div>
+
+
+<!-- ORDER MODAL -->
+
+<div class="modal" id="orderModal">
+
+<div class="modal-box">
+
+<span class="close" onclick="closeOrder()">×</span>
+
+<h2>📲 Service Order</h2>
+
+<p id="orderServiceName"></p>
+
+
+<div class="order-form">
+
+<label>👤 आपका नाम</label>
+
+<input
+type="text"
+id="customerName"
+placeholder="अपना नाम लिखें">
+
+
+<label>📱 आपका मोबाइल नंबर</label>
+
+<input
+type="tel"
+id="customerMobile"
+placeholder="10 digit mobile number"
+maxlength="10">
+
+
+<label>🛠️ Service</label>
+
+<input
+type="text"
+id="selectedService"
+readonly>
+
+
+<label>💰 Service Charge</label>
+
+<input
+type="text"
+id="selectedPrice"
+readonly>
+
+
+<label>📝 अतिरिक्त जानकारी</label>
+
+<textarea
+id="customerMessage"
+placeholder="अगर कोई विशेष जानकारी है तो लिखें..."></textarea>
+
+
+<label>📲 WhatsApp पर Order किस नंबर पर भेजें?</label>
+
+
+<div class="whatsapp-choice">
+
+<label>
+
+<input
+type="radio"
+name="whatsappNumber"
+value="918097686091"
+checked>
+
+8097686091
+
+</label>
+
+
+<label>
+
+<input
+type="radio"
+name="whatsappNumber"
+value="919955760491">
+
+9955760491
+
+</label>
+
+</div>
+
+
+<button
+class="send-order"
+onclick="sendOrder()">
+
+💬 Send Order on WhatsApp
+
+</button>
+
+</div>
 
 </div>
 
@@ -872,173 +989,91 @@ target="_blank">
 
 <script>
 
-function portal(name,url){
 
-return `
-<div class="portal">
-
-<div class="portal-name">
-${name}
-</div>
-
-<a href="${url}" target="_blank">
-Open
-</a>
-
-</div>
-`;
-
-}
-
-
-function callButton(){
-
-return `
-<a
-class="modal-call"
-href="tel:8097686091">
-
-📞 Service के लिए Call करें
-
-</a>
-`;
-
-}
-
+/* SERVICE DATA */
 
 const serviceData={
 
 
-"Online Form":`
-
-<p>
-Online Form Apply की service available है।
-</p>
+"Online Form":{
+price:"₹150",
+content:`
+<p>Online Form Apply की सुविधा उपलब्ध है।</p>
 
 <p><strong>Service Charge: ₹150</strong></p>
 
-${portal("🇮🇳 National Portal of India",
-"https://www.india.gov.in/")}
+${portal("🧾 Bihar RTPS","https://serviceonline.bihar.gov.in/")}
+${portal("📚 UPSC","https://www.upsc.gov.in/")}
+${portal("📚 SSC","https://ssc.gov.in/")}
+${portal("🎓 NTA","https://www.nta.ac.in/")}
+${portal("🗳️ Voter Services","https://voters.eci.gov.in/")}
 
-${portal("🧾 Bihar RTPS",
-"https://serviceonline.bihar.gov.in/")}
-
-${portal("📚 UPSC",
-"https://www.upsc.gov.in/")}
-
-${portal("📚 SSC",
-"https://ssc.gov.in/")}
-
-${portal("🎓 NTA",
-"https://www.nta.ac.in/")}
-
-${portal("🗳️ Voter Services",
-"https://voters.eci.gov.in/")}
-
-${portal("🚂 RRB Recruitment",
-"https://www.rrbapply.gov.in/")}
-
-${portal("🛂 Passport Seva",
-"https://www.passportindia.gov.in/")}
-
-${portal("🚗 Parivahan",
-"https://parivahan.gov.in/")}
-
-`,
+<button class="order-btn"
+onclick="openOrder('Online Form','₹150')">
+📲 Online Form Order करें
+</button>
+`
+},
 
 
-"PAN Card":`
-
-<p>
-PAN Card application assistance available है।
-</p>
+"PAN Card":{
+price:"₹200",
+content:`
+<p>PAN Card application assistance available है।</p>
 
 <p><strong>Service Charge: ₹200</strong></p>
 
 ${portal("💰 Income Tax Official Portal",
 "https://www.incometax.gov.in/")}
 
-`,
+<button class="order-btn"
+onclick="openOrder('PAN Card','₹200')">
+📲 PAN Card Order करें
+</button>
+`
+},
 
 
-"Aadhaar":`
+"Aadhaar":{
+price:"Contact",
+content:`
+<p>Aadhaar related assistance available है।</p>
 
-<p>
-Aadhaar related assistance available है।
-</p>
-
-<p><strong>Price: Contact for Price</strong></p>
+<p><strong>Price: Contact</strong></p>
 
 ${portal("🆔 UIDAI Official Website",
 "https://uidai.gov.in/")}
 
-${portal("📁 DigiLocker",
-"https://www.digilocker.gov.in/")}
+<button class="order-btn"
+onclick="openOrder('Aadhaar','Contact for Price')">
+📲 Aadhaar Service Order करें
+</button>
+`
+},
 
-${callButton()}
 
-`,
+"Railway":{
+price:"Contact",
+content:`
+<p>Railway related services के लिए संपर्क करें।</p>
 
-
-"Railway":`
-
-<p>
-Railway related services के लिए संपर्क करें।
-</p>
-
-<p><strong>Price: Contact for Price</strong></p>
+<p><strong>Price: Contact</strong></p>
 
 ${portal("🚆 IRCTC Official",
 "https://www.irctc.co.in/")}
 
-${portal("🚂 RRB Recruitment",
-"https://www.rrbapply.gov.in/")}
-
-${callButton()}
-
-`,
-
-
-"Government Services":`
-
-<p>
-Government services के लिए official portals:
-</p>
-
-<p><strong>Price: Contact for Price</strong></p>
-
-${portal("🇮🇳 National Portal",
-"https://www.india.gov.in/")}
-
-${portal("🧾 Bihar RTPS",
-"https://serviceonline.bihar.gov.in/")}
-
-${portal("🆔 UIDAI",
-"https://uidai.gov.in/")}
-
-${portal("🗳️ Voter Services",
-"https://voters.eci.gov.in/")}
-
-${portal("🛂 Passport Seva",
-"https://www.passportindia.gov.in/")}
-
-${portal("🚗 Parivahan",
-"https://parivahan.gov.in/")}
-
-${portal("💰 Income Tax",
-"https://www.incometax.gov.in/")}
-
-${portal("📁 DigiLocker",
-"https://www.digilocker.gov.in/")}
-
-`,
+<button class="order-btn"
+onclick="openOrder('Railway','Contact for Price')">
+📲 Railway Service Order करें
+</button>
+`
+},
 
 
-"Print / Scan":`
-
-<p>
-Printing और Scanning services उपलब्ध हैं।
-</p>
+"Print / Scan":{
+price:"From ₹3",
+content:`
+<p>Printing और Scanning services उपलब्ध हैं।</p>
 
 <ul>
 <li>B&W Print – 1 Side: ₹5</li>
@@ -1048,183 +1083,224 @@ Printing और Scanning services उपलब्ध हैं।
 <li>Scan: ₹10</li>
 </ul>
 
-${callButton()}
+<button class="order-btn"
+onclick="openOrder('Print / Scan','From ₹3')">
+📲 Print / Scan Order करें
+</button>
+`
+},
 
-`,
 
-
-"Resume":`
-
-<p>
-Professional Resume / CV बनाने की सुविधा।
-</p>
+"Resume":{
+price:"₹100",
+content:`
+<p>Professional Resume / CV बनाने की सुविधा।</p>
 
 <p><strong>Price: ₹100</strong></p>
 
-${callButton()}
+<button class="order-btn"
+onclick="openOrder('Resume / CV','₹100')">
+📲 Resume Order करें
+</button>
+`
+},
 
-`,
 
-
-"Passport Photo":`
-
-<p>
-Passport Size Photo service available है।
-</p>
+"Passport Photo":{
+price:"₹60 / 8 Photos",
+content:`
+<p>Passport Size Photo service available है।</p>
 
 <p><strong>8 Photos: ₹60</strong></p>
 
-${callButton()}
+<button class="order-btn"
+onclick="openOrder('Passport Photo','₹60 / 8 Photos')">
+📲 Passport Photo Order करें
+</button>
+`
+},
 
-`,
+
+"Government Services":{
+price:"Contact",
+content:`
+<p>Government services के लिए सहायता उपलब्ध है।</p>
+
+<p><strong>Price: Contact</strong></p>
+
+${portal("🧾 Bihar RTPS","https://serviceonline.bihar.gov.in/")}
+${portal("🆔 UIDAI","https://uidai.gov.in/")}
+${portal("🗳️ Voter Services","https://voters.eci.gov.in/")}
+${portal("🛂 Passport Seva","https://www.passportindia.gov.in/")}
+${portal("🚗 Parivahan","https://parivahan.gov.in/")}
+
+<button class="order-btn"
+onclick="openOrder('Government Services','Contact for Price')">
+📲 Government Service Order करें
+</button>
+`
+},
 
 
-"Document Upload":`
-
-<p>
-Online Document Upload service उपलब्ध है।
-</p>
+"Document Upload":{
+price:"₹50",
+content:`
+<p>Online Document Upload service उपलब्ध है।</p>
 
 <p><strong>Price: ₹50</strong></p>
 
-${callButton()}
+<button class="order-btn"
+onclick="openOrder('Document Upload','₹50')">
+📲 Document Upload Order करें
+</button>
+`
+},
 
-`,
 
-
-"Email Create":`
-
-<p>
-New Email Account बनाने की सहायता।
-</p>
+"Email Create":{
+price:"₹50",
+content:`
+<p>New Email Account बनाने की सहायता।</p>
 
 <p><strong>Price: ₹50</strong></p>
 
-${callButton()}
+<button class="order-btn"
+onclick="openOrder('Email Create','₹50')">
+📲 Email Create Order करें
+</button>
+`
+},
 
-`,
 
-
-"Result Download":`
-
-<p>
-Online Result Download service।
-</p>
+"Result Download":{
+price:"₹20",
+content:`
+<p>Online Result Download service।</p>
 
 <p><strong>Price: ₹20</strong></p>
 
-${callButton()}
+<button class="order-btn"
+onclick="openOrder('Result Download','₹20')">
+📲 Result Download Order करें
+</button>
+`
+},
 
-`,
 
-
-"Admit Card":`
-
-<p>
-Online Admit Card Download service।
-</p>
+"Admit Card":{
+price:"₹20",
+content:`
+<p>Online Admit Card Download service।</p>
 
 <p><strong>Price: ₹20</strong></p>
 
-${callButton()}
+<button class="order-btn"
+onclick="openOrder('Admit Card','₹20')">
+📲 Admit Card Order करें
+</button>
+`
+},
 
-`,
 
-
-"Form Correction":`
-
-<p>
-Online Form Correction assistance।
-</p>
+"Form Correction":{
+price:"₹50",
+content:`
+<p>Online Form Correction assistance।</p>
 
 <p><strong>Price: ₹50</strong></p>
 
-${callButton()}
+<button class="order-btn"
+onclick="openOrder('Form Correction','₹50')">
+📲 Correction Order करें
+</button>
+`
+},
 
-`,
 
-
-"Lamination":`
-
-<p>
-Document Lamination service।
-</p>
+"Lamination":{
+price:"₹30",
+content:`
+<p>Document Lamination service।</p>
 
 <p><strong>Price: ₹30</strong></p>
 
-${callButton()}
-
+<button class="order-btn"
+onclick="openOrder('Lamination','₹30')">
+📲 Lamination Order करें
+</button>
 `
+}
 
 };
 
+
+/* PORTAL */
+
+function portal(name,url){
+
+return `
+<div class="portal">
+
+<div class="portal-name">
+${name}
+</div>
+
+<a
+href="${url}"
+target="_blank">
+
+Open
+
+</a>
+
+</div>
+`;
+
+}l
+
+
+/* OPEN SERVICE */
 
 function openService(name){
 
-document.getElementById("serviceModal").style.display="block";
+document.getElementById("serviceModal")
+.style.display="block";
 
-document.getElementById("serviceTitle").innerText=
-"🔹 "+name;
+document.getElementById("serviceTitle")
+.innerText="🔹 "+name;
 
-document.getElementById("serviceContent").innerHTML=
-serviceData[name];
+document.getElementById("serviceContent")
+.innerHTML=serviceData[name].content;
 
 }
 
+
+/* CLOSE SERVICE */
 
 function closeService(){
 
-document.getElementById("serviceModal").style.display="none";
+document.getElementById("serviceModal")
+.style.display="none";
 
 }
 
 
-window.onclick=function(event){
+/* OPEN ORDER */
 
-let modal=
-document.getElementById("serviceModal");
+function openOrder(service,price){
 
-if(event.target===modal){
+document.getElementById("serviceModal")
+.style.display="none";
 
-modal.style.display="none";
+document.getElementById("orderModal")
+.style.display="block";
 
-}
+document.getElementById("selectedService")
+.value=service;
 
-};
+document.getElementById("selectedPrice")
+.value=price;
 
-
-function searchService(){
-
-let input=
-document.getElementById("search")
-.value
-.toLowerCase();
-
-let services=
-document.getElementsByClassName("service");
-
-for(let i=0;i<services.length;i++){
-
-let text=
-services[i]
-.innerText
-.toLowerCase();
-
-if(text.includes(input)){
-
-services[i].style.display="";
-
-}else{
-
-services[i].style.display="none";
-
-}
-
-}
-
-}
-
-</script>
-
-</body>
-                       </html>
+document.getElementById("orderServiceName")
+.innerText=
+"आप "+s 
