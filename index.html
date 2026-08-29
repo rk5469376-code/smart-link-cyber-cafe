@@ -1,162 +1,260 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smart Link Cyber Cafe</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Link Cyber Cafe</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,sans-serif;
+}
 
-    body {
-      background: #f4f7fb;
-      color: #222;
-    }
+body{
+  background:#f3f6fb;
+  color:#222;
+}
 
-    header {
-      background: #0b5ed7;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
+header{
+  background:linear-gradient(135deg,#0757c9,#0b8cff);
+  color:white;
+  padding:28px 18px;
+  text-align:center;
+}
 
-    header h1 {
-      font-size: 26px;
-    }
+header h1{
+  font-size:28px;
+  margin-bottom:8px;
+}
 
-    header p {
-      margin-top: 6px;
-      font-size: 14px;
-    }
+header p{
+  font-size:15px;
+}
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
+.container{
+  max-width:1000px;
+  margin:auto;
+  padding:20px;
+}
 
-    .welcome {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 10px rgba(0,0,0,.08);
-    }
+.search{
+  width:100%;
+  padding:14px;
+  border:1px solid #ddd;
+  border-radius:10px;
+  font-size:16px;
+  margin-bottom:20px;
+  outline:none;
+}
 
-    .welcome h2 {
-      color: #0b5ed7;
-      margin-bottom: 8px;
-    }
+.welcome{
+  background:white;
+  padding:22px;
+  border-radius:14px;
+  margin-bottom:22px;
+  box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 15px;
-    }
+.welcome h2{
+  color:#0757c9;
+  margin-bottom:8px;
+}
 
-    .service {
-      background: white;
-      padding: 20px 10px;
-      text-align: center;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,.08);
-      cursor: pointer;
-      transition: .2s;
-    }
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
+  gap:15px;
+}
 
-    .service:hover {
-      transform: translateY(-3px);
-    }
+.service{
+  background:white;
+  border-radius:14px;
+  padding:22px 10px;
+  text-align:center;
+  box-shadow:0 3px 12px rgba(0,0,0,.08);
+  cursor:pointer;
+  transition:.2s;
+}
 
-    .icon {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
+.service:hover{
+  transform:translateY(-4px);
+}
 
-    .service h3 {
-      font-size: 16px;
-      color: #333;
-    }
+.icon{
+  font-size:34px;
+  margin-bottom:10px;
+}
 
-    footer {
-      margin-top: 30px;
-      background: #222;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      font-size: 13px;
-    }
-  </style>
+.service h3{
+  font-size:16px;
+}
+
+.contact{
+  margin-top:25px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  flex:1;
+  min-width:140px;
+  padding:14px;
+  border:0;
+  border-radius:10px;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.call{
+  background:#198754;
+}
+
+.whatsapp{
+  background:#25d366;
+}
+
+footer{
+  margin-top:30px;
+  background:#20252b;
+  color:white;
+  text-align:center;
+  padding:18px;
+  font-size:13px;
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1>Smart Link Cyber Cafe</h1>
-    <p>आपकी सभी Digital Services एक जगह</p>
-  </header>
+<header>
+  <h1>Smart Link Cyber Cafe</h1>
+  <p>आपकी सभी Digital Services एक जगह</p>
+</header>
 
-  <div class="container">
+<div class="container">
 
-    <div class="welcome">
-      <h2>Welcome 👋</h2>
-      <p>Smart Link Cyber Cafe में आपका स्वागत है। नीचे उपलब्ध सेवाओं में से अपनी जरूरत की सेवा चुनें।</p>
+  <div class="welcome">
+    <h2>Welcome 👋</h2>
+    <p>
+      Smart Link Cyber Cafe में आपका स्वागत है।
+      अपनी जरूरत की Digital Service नीचे चुनें।
+    </p>
+  </div>
+
+  <input
+    type="text"
+    id="search"
+    class="search"
+    placeholder="🔍 Service Search करें..."
+    onkeyup="searchService()"
+  >
+
+  <div class="services" id="services">
+
+    <div class="service" onclick="service('Online Form')">
+      <div class="icon">📝</div>
+      <h3>Online Form</h3>
     </div>
 
-    <div class="services">
+    <div class="service" onclick="service('PAN Card')">
+      <div class="icon">🪪</div>
+      <h3>PAN Card</h3>
+    </div>
 
-      <div class="service">
-        <div class="icon">📝</div>
-        <h3>Online Form</h3>
-      </div>
+    <div class="service" onclick="service('Aadhaar')">
+      <div class="icon">🆔</div>
+      <h3>Aadhaar</h3>
+    </div>
 
-      <div class="service">
-        <div class="icon">🪪</div>
-        <h3>PAN Card</h3>
-      </div>
+    <div class="service" onclick="service('Railway')">
+      <div class="icon">🚆</div>
+      <h3>Railway</h3>
+    </div>
 
-      <div class="service">
-        <div class="icon">🆔</div>
-        <h3>Aadhaar</h3>
-      </div>
+    <div class="service" onclick="service('Print Scan')">
+      <div class="icon">🖨️</div>
+      <h3>Print / Scan</h3>
+    </div>
 
-      <div class="service">
-        <div class="icon">🚆</div>
-        <h3>Railway Form</h3>
-      </div>
+    <div class="service" onclick="service('Resume')">
+      <div class="icon">📄</div>
+      <h3>Resume</h3>
+    </div>
 
-      <div class="service">
-        <div class="icon">🖨️</div>
-        <h3>Print / Scan</h3>
-      </div>
+    <div class="service" onclick="service('Passport Photo')">
+      <div class="icon">📸</div>
+      <h3>Passport Photo</h3>
+    </div>
 
-      <div class="service">
-        <div class="icon">📄</div>
-        <h3>Resume</h3>
-      </div>
-
-      <div class="service">
-        <div class="icon">📸</div>
-        <h3>Passport Photo</h3>
-      </div>
-
-      <div class="service">
-        <div class="icon">💻</div>
-        <h3>Online Services</h3>
-      </div>
-
+    <div class="service" onclick="service('Online Services')">
+      <div class="icon">💻</div>
+      <h3>Online Services</h3>
     </div>
 
   </div>
 
-  <footer>
-    © 2026 Smart Link Cyber Cafe
-  </footer>
+  <div class="contact">
+
+    <button class="btn call" onclick="callCafe()">
+      📞 Call Now
+    </button>
+
+    <button class="btn whatsapp" onclick="whatsappCafe()">
+      💬 WhatsApp
+    </button>
+
+  </div>
+
+</div>
+
+<footer>
+  © 2026 Smart Link Cyber Cafe
+</footer>
+
+<script>
+
+function service(name){
+  alert("आपने " + name + " Service चुनी है।");
+}
+
+function searchService(){
+
+  let input=document
+    .getElementById("search")
+    .value
+    .toLowerCase();
+
+  let services=document
+    .getElementsByClassName("service");
+
+  for(let i=0;i<services.length;i++){
+
+    let text=services[i]
+      .innerText
+      .toLowerCase();
+
+    if(text.includes(input)){
+      services[i].style.display="block";
+    }else{
+      services[i].style.display="none";
+    }
+  }
+}
+
+function callCafe(){
+  alert("अभी Contact Number सेट नहीं किया गया है।");
+}
+
+function whatsappCafe(){
+  alert("अभी WhatsApp Number सेट नहीं किया गया है।");
+}
+
+</script>
 
 </body>
-          </html>
+</html>
