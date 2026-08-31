@@ -1,7 +1,12 @@
-<!DOCTYPE html><html lang="hi">
+<!DOCTYPE html>
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Smart Link Cyber Cafe</title><style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Trendz Online Hub | Motipur Muzaffarpur</title>
+
+<style>
 *{
   box-sizing:border-box;
   margin:0;
@@ -10,20 +15,29 @@
 }
 
 body{
-  background:#f3f6fb;
+  background:#f3f7fc;
   color:#222;
 }
 
 header{
   background:linear-gradient(135deg,#0757c9,#08b8ff);
   color:white;
-  padding:28px 18px;
   text-align:center;
+  padding:25px 15px;
+}
+
+.logo{
+  width:105px;
+  height:105px;
+  object-fit:cover;
+  border-radius:50%;
+  background:white;
+  margin-bottom:10px;
 }
 
 header h1{
   font-size:30px;
-  margin-bottom:8px;
+  margin-bottom:7px;
 }
 
 header p{
@@ -36,6 +50,25 @@ header p{
   padding:20px;
 }
 
+.welcome,
+.contact,
+.enquiry,
+.official{
+  background:white;
+  padding:22px;
+  border-radius:16px;
+  margin-bottom:22px;
+  box-shadow:0 4px 18px rgba(0,0,0,.08);
+}
+
+.welcome h2,
+.contact h2,
+.enquiry h2,
+.official h2{
+  color:#0757c9;
+  margin-bottom:10px;
+}
+
 .search{
   width:100%;
   padding:15px;
@@ -44,24 +77,6 @@ header p{
   font-size:16px;
   margin-bottom:20px;
   outline:none;
-}
-
-.search:focus{
-  border-color:#0757c9;
-  box-shadow:0 0 0 3px rgba(7,87,201,.12);
-}
-
-.welcome{
-  background:white;
-  padding:22px;
-  border-radius:15px;
-  margin-bottom:20px;
-  box-shadow:0 3px 15px rgba(0,0,0,.08);
-}
-
-.welcome h2{
-  color:#0757c9;
-  margin-bottom:8px;
 }
 
 .services{
@@ -74,24 +89,18 @@ header p{
   background:white;
   padding:22px 10px;
   text-align:center;
-  border-radius:15px;
-  box-shadow:0 3px 15px rgba(0,0,0,.08);
+  border-radius:16px;
+  box-shadow:0 4px 16px rgba(0,0,0,.08);
   cursor:pointer;
   transition:.2s;
-  user-select:none;
 }
 
 .service:hover{
   transform:translateY(-4px);
-  box-shadow:0 7px 20px rgba(0,0,0,.15);
-}
-
-.service:active{
-  transform:scale(.97);
 }
 
 .icon{
-  font-size:38px;
+  font-size:40px;
   margin-bottom:10px;
 }
 
@@ -99,33 +108,24 @@ header p{
   font-size:17px;
 }
 
-.no-result{
-  display:none;
-  background:white;
-  text-align:center;
-  padding:25px;
-  border-radius:15px;
-  margin-top:15px;
-  color:#777;
-  box-shadow:0 3px 15px rgba(0,0,0,.08);
+.buttons,
+.modal-buttons{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin-top:18px;
 }
 
-.buttons{
-  display:flex;
-  gap:15px;
-  margin-top:25px;
-}
-
-.btn{
-  flex:1;
-  padding:15px;
-  border:0;
-  border-radius:12px;
+.btn,
+.modal-buttons a{
+  display:block;
+  padding:14px;
+  border-radius:10px;
   color:white;
-  font-size:18px;
-  cursor:pointer;
   text-decoration:none;
   text-align:center;
+  font-size:16px;
+  border:none;
 }
 
 .call{
@@ -136,11 +136,70 @@ header p{
   background:#20c968;
 }
 
-.btn:hover{
-  opacity:.9;
+.whatsapp2{
+  background:#10a957;
 }
 
-/* MODAL */
+.form-group{
+  margin-bottom:15px;
+}
+
+.form-group label{
+  display:block;
+  margin-bottom:6px;
+  font-weight:bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+  width:100%;
+  padding:13px;
+  border:1px solid #ccc;
+  border-radius:9px;
+  font-size:15px;
+  outline:none;
+}
+
+.form-group textarea{
+  min-height:100px;
+  resize:vertical;
+}
+
+.submit{
+  width:100%;
+  padding:14px;
+  background:#0757c9;
+  color:white;
+  border:none;
+  border-radius:10px;
+  font-size:17px;
+  cursor:pointer;
+}
+
+.official-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:12px;
+}
+
+.official-card{
+  background:#f7faff;
+  padding:17px;
+  border-radius:12px;
+}
+
+.official-card h3{
+  margin-bottom:7px;
+}
+
+.official-card a{
+  display:inline-block;
+  margin-top:8px;
+  color:#0757c9;
+  text-decoration:none;
+  font-weight:bold;
+}
 
 .modal{
   display:none;
@@ -152,262 +211,383 @@ header p{
   height:100%;
   background:rgba(0,0,0,.65);
   padding:20px;
-  overflow:auto;
 }
 
 .modal-box{
   background:white;
   max-width:500px;
-  margin:40px auto;
+  margin:55px auto;
   padding:25px;
   border-radius:18px;
   position:relative;
-  animation:pop .2s ease;
-}
-
-@keyframes pop{
-  from{
-    transform:scale(.8);
-    opacity:0;
-  }
-  to{
-    transform:scale(1);
-    opacity:1;
-  }
 }
 
 .close{
   position:absolute;
   right:18px;
-  top:10px;
-  font-size:30px;
+  top:8px;
+  font-size:32px;
   cursor:pointer;
-  color:#555;
-}
-
-.close:hover{
-  color:red;
 }
 
 .modal h2{
   color:#0757c9;
   margin-bottom:12px;
-  padding-right:35px;
 }
 
 .modal p{
   line-height:1.6;
-  margin-bottom:15px;
+  margin-bottom:12px;
 }
 
 .modal ul{
   margin-left:20px;
-  line-height:1.8;
-  margin-bottom:10px;
+  line-height:1.9;
 }
 
-/* FORM */
-
-.request-title{
-  margin-top:20px;
-  color:#0757c9;
-  font-size:20px;
-}
-
-.form-group{
-  margin-top:12px;
-}
-
-.form-group label{
+.apply-btn{
   display:block;
-  font-weight:bold;
-  margin-bottom:6px;
-}
-
-.form-group input,
-.form-group textarea{
-  width:100%;
-  padding:12px;
-  border:1px solid #ccc;
-  border-radius:10px;
-  font-size:16px;
-  outline:none;
-}
-
-.form-group input:focus,
-.form-group textarea:focus{
-  border-color:#0757c9;
-}
-
-.form-group textarea{
-  min-height:90px;
-  resize:vertical;
-}
-
-/* WHATSAPP BUTTONS */
-
-.whatsapp-options{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
   margin-top:18px;
-}
-
-.wa-btn{
-  border:0;
-  padding:14px 8px;
-  border-radius:10px;
-  color:white;
-  font-size:15px;
-  cursor:pointer;
-  font-weight:bold;
-}
-
-.wa1{
-  background:#20c968;
-}
-
-.wa2{
-  background:#128c7e;
-}
-
-.wa-btn:hover{
-  opacity:.9;
-}
-
-.call-modal{
-  display:block;
+  padding:13px;
   background:#0757c9;
   color:white;
+  text-align:center;
+  border-radius:10px;
   text-decoration:none;
-  text-align:center;
-  padding:13px;
-  border-radius:10px;
-  margin-top:10px;
-}
-
-.success{
-  display:none;
-  background:#e9fff1;
-  color:#168b55;
-  padding:15px;
-  border-radius:10px;
-  margin-top:15px;
-  text-align:center;
-  font-weight:bold;
 }
 
 footer{
   background:#20252b;
   color:white;
   text-align:center;
-  padding:20px;
+  padding:22px;
+  line-height:1.7;
   margin-top:30px;
 }
 
-@media(max-width:500px){
+@media(max-width:550px){
 
   header h1{
     font-size:27px;
   }
 
-  .buttons{
-    flex-direction:column;
-  }
-
-  .whatsapp-options{
+  .buttons,
+  .modal-buttons{
     grid-template-columns:1fr;
   }
 
-  .modal-box{
-    margin:25px auto;
-    padding:20px;
-  }
-
-  .services{
-    grid-template-columns:repeat(2,1fr);
-  }
-
 }
-</style></head><body><header>
-  <h1>Smart Link Cyber Cafe</h1>
-  <p>आपकी सभी Digital Services एक जगह</p>
-</header><div class="container">  <div class="welcome">
-    <h2>Welcome 👋</h2>
-    <p>
-      Smart Link Cyber Cafe में आपका स्वागत है।<br>
-      अपनी जरूरत की Digital Service नीचे चुनें और Request भेजें।
-    </p>
-  </div>  <!-- SEARCH --><input
+</style>
+</head>
+
+<body>
+
+<header>
+
+<img src="logo.png" class="logo" alt="Trendz Online Hub Logo">
+
+<h1>Trendz Online Hub</h1>
+
+<p>आपकी सभी Digital Services एक जगह</p>
+
+</header>
+
+
+<div class="container">
+
+
+<div class="welcome">
+
+<h2>Welcome 👋</h2>
+
+<p>
+Trendz Online Hub में आपका स्वागत है।<br>
+Online Form, PAN, Aadhaar, Railway, Print, Scan,
+Resume, Passport Photo और अन्य Digital Services
+के लिए हमसे संपर्क करें।
+</p>
+
+</div>
+
+
+<input
 type="text"
 id="search"
 class="search"
 placeholder="🔍 Service Search करें..."
-oninput="searchService()"
+onkeyup="searchService()"
+>
 
-«»
 
-  <!-- SERVICES -->  <div class="services" id="services"><div class="service" onclick="openService('Online Form')">
-  <div class="icon">📝</div>
-  <h3>Online Form</h3>
+<div class="services">
+
+
+<div class="service" onclick="openService('Online Form')">
+<div class="icon">📝</div>
+<h3>Online Form</h3>
 </div>
+
 
 <div class="service" onclick="openService('PAN Card')">
-  <div class="icon">🪪</div>
-  <h3>PAN Card</h3>
+<div class="icon">🪪</div>
+<h3>PAN Card</h3>
 </div>
+
 
 <div class="service" onclick="openService('Aadhaar')">
-  <div class="icon">🆔</div>
-  <h3>Aadhaar</h3>
+<div class="icon">🆔</div>
+<h3>Aadhaar</h3>
 </div>
+
 
 <div class="service" onclick="openService('Railway')">
-  <div class="icon">🚆</div>
-  <h3>Railway</h3>
+<div class="icon">🚆</div>
+<h3>Railway</h3>
 </div>
+
 
 <div class="service" onclick="openService('Print / Scan')">
-  <div class="icon">🖨️</div>
-  <h3>Print / Scan</h3>
+<div class="icon">🖨️</div>
+<h3>Print / Scan</h3>
 </div>
+
 
 <div class="service" onclick="openService('Resume')">
-  <div class="icon">📄</div>
-  <h3>Resume</h3>
+<div class="icon">📄</div>
+<h3>Resume</h3>
 </div>
+
 
 <div class="service" onclick="openService('Passport Photo')">
-  <div class="icon">📸</div>
-  <h3>Passport Photo</h3>
+<div class="icon">📸</div>
+<h3>Passport Photo</h3>
 </div>
 
-<div class="service" onclick="openService('Online Services')">
-  <div class="icon">💻</div>
-  <h3>Online Services</h3>
+
+<div class="service" onclick="openService('Online Correction')">
+<div class="icon">✏️</div>
+<h3>Online Correction</h3>
 </div>
 
-  </div>  <div class="no-result" id="noResult">
-    ❌ कोई Service नहीं मिली।<br>
-    कृपया दूसरा नाम Search करें।
-  </div>  <!-- CONTACT BUTTONS -->  <div class="buttons"><a
-  class="btn call"
-  href="tel:8097686091">
-  📞 Call Now
-</a>
+
+<div class="service" onclick="openService('Other Services')">
+<div class="icon">💻</div>
+<h3>Other Services</h3>
+</div>
+
+</div>
+
+
+<!-- CUSTOMER ENQUIRY -->
+
+<div class="enquiry">
+
+<h2>📝 Customer Enquiry / Apply</h2>
+
+<form onsubmit="sendEnquiry(event)">
+
+<div class="form-group">
+<label>नाम *</label>
+<input
+type="text"
+id="customerName"
+placeholder="अपना नाम लिखें"
+required>
+</div>
+
+
+<div class="form-group">
+<label>मोबाइल नंबर *</label>
+<input
+type="tel"
+id="customerMobile"
+placeholder="10 digit mobile number"
+maxlength="10"
+required>
+</div>
+
+
+<div class="form-group">
+<label>Service चुनें *</label>
+
+<select id="customerService" required>
+
+<option value="">-- Service चुनें --</option>
+
+<option>Online Form</option>
+<option>PAN Card</option>
+<option>Aadhaar</option>
+<option>Railway</option>
+<option>Print / Scan</option>
+<option>Resume</option>
+<option>Passport Photo</option>
+<option>Online Correction</option>
+<option>Other Services</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Message / काम की जानकारी</label>
+
+<textarea
+id="customerMessage"
+placeholder="अपनी जरूरत लिखें..."></textarea>
+
+</div>
+
+
+<div class="form-group">
+
+<label>WhatsApp नंबर चुनें *</label>
+
+<select id="whatsappNumber" required>
+
+<option value="">-- WhatsApp चुनें --</option>
+
+<option value="918097686091">
+WhatsApp 1 - 8097686091
+</option>
+
+<option value="919955760491">
+WhatsApp 2 - 9955760491
+</option>
+
+</select>
+
+</div>
+
+
+<button class="submit" type="submit">
+
+📲 WhatsApp पर Enquiry भेजें
+
+</button>
+
+</form>
+
+</div>
+
+
+<!-- CONTACT -->
+
+<div class="contact">
+
+<h2>📞 Contact Us</h2>
+
+<p>📱 <b>8097686091</b></p>
+
+<p>📱 <b>9955760491</b></p>
+
+<p>📍 <b>Motipur, Muzaffarpur, Bihar - 843111</b></p>
+
+
+<div class="buttons">
 
 <a
-  class="btn whatsapp"
-  href="https://wa.me/918097686091"
-  target="_blank">
-  💬 WhatsApp
+class="btn call"
+href="tel:8097686091">
+📞 Call 1
 </a>
 
-  </div></div><!-- SERVICE MODAL --><div class="modal" id="serviceModal">  <div class="modal-box"><span
-  class="close"
-  onclick="closeService()">
-  ×
-</span>
+
+<a
+class="btn call"
+href="tel:9955760491">
+📞 Call 2
+</a>
+
+
+<a
+class="btn whatsapp"
+href="https://wa.me/918097686091"
+target="_blank">
+💬 WhatsApp 1
+</a>
+
+
+<a
+class="btn whatsapp2"
+href="https://wa.me/919955760491"
+target="_blank">
+💬 WhatsApp 2
+</a>
+
+</div>
+
+</div>
+
+
+<!-- OFFICIAL WEBSITES -->
+
+<div class="official">
+
+<h2>🌐 Official Websites</h2>
+
+<div class="official-grid">
+
+
+<div class="official-card">
+<h3>🪪 Aadhaar</h3>
+<p>UIDAI Official Website</p>
+<a
+href="https://uidai.gov.in/"
+target="_blank">
+Open Website →
+</a>
+</div>
+
+
+<div class="official-card">
+<h3>🚆 Railway</h3>
+<p>IRCTC Official Website</p>
+<a
+href="https://www.irctc.co.in/"
+target="_blank">
+Open Website →
+</a>
+</div>
+
+
+<div class="official-card">
+<h3>🗳️ Voter ID</h3>
+<p>Election Commission</p>
+<a
+href="https://voters.eci.gov.in/"
+target="_blank">
+Open Website →
+</a>
+</div>
+
+
+<div class="official-card">
+<h3>💰 Income Tax</h3>
+<p>Income Tax Department</p>
+<a
+href="https://www.incometax.gov.in/"
+target="_blank">
+Open Website →
+</a>
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<!-- SERVICE MODAL -->
+
+<div class="modal" id="serviceModal">
+
+<div class="modal-box">
+
+<span class="close" onclick="closeService()">×</span>
 
 <h2 id="serviceTitle"></h2>
 
@@ -415,388 +595,300 @@ oninput="searchService()"
 
 <ul id="serviceList"></ul>
 
-<h3 class="request-title">
-  📝 Apply / Request भेजें
-</h3>
 
-<form onsubmit="sendRequest(event)">
+<a
+href="#"
+id="applyService"
+class="apply-btn"
+onclick="selectServiceAndScroll(event)">
+📝 इस Service के लिए Enquiry करें
+</a>
 
-  <div class="form-group">
 
-    <label>Customer Name *</label>
+<div class="modal-buttons">
 
-    <input
-      type="text"
-      id="customerName"
-      placeholder="अपना नाम लिखें"
-      required>
+<a
+href="tel:8097686091"
+class="call">
+📞 Call
+</a>
 
-  </div>
-
-  <div class="form-group">
-
-    <label>Mobile Number *</label>
-
-    <input
-      type="tel"
-      id="customerMobile"
-      placeholder="10 digit mobile number"
-      maxlength="10"
-      inputmode="numeric"
-      required>
-
-  </div>
-
-  <div class="form-group">
-
-    <label>जरूरी जानकारी</label>
-
-    <textarea
-      id="customerMessage"
-      placeholder="अपनी जरूरत / जानकारी यहाँ लिखें..."></textarea>
-
-  </div>
-
-  <div class="whatsapp-options">
-
-    <button
-      type="button"
-      class="wa-btn wa1"
-      onclick="sendRequestTo('8097686091')">
-
-      💬 WhatsApp 1<br>
-      8097686091
-
-    </button>
-
-    <button
-      type="button"
-      class="wa-btn wa2"
-      onclick="sendRequestTo('9955760491')">
-
-      💬 WhatsApp 2<br>
-      9955760491
-
-    </button>
-
-  </div>
-
-</form>
-
-<div
-  class="success"
-  id="successMessage">
-
-  ✅ Request तैयार है। WhatsApp खुल रहा है...
+<a
+href="https://wa.me/918097686091"
+target="_blank"
+class="whatsapp">
+💬 WhatsApp
+</a>
 
 </div>
 
-<a
-  class="call-modal"
-  href="tel:8097686091">
+</div>
 
-  📞 8097686091 पर Call करें
+</div>
 
-</a>
 
-  </div></div><footer>
-  © 2026 Smart Link Cyber Cafe
-</footer><script>
+<footer>
 
-/* SERVICE DATA */
+<b>Trendz Online Hub</b><br>
+
+Motipur, Muzaffarpur, Bihar - 843111<br>
+
+📞 8097686091 | 9955760491<br>
+
+© 2026 Trendz Online Hub
+
+</footer>
+
+
+<script>
+
 
 const serviceData = {
 
 "Online Form":{
- text:"सभी प्रकार के Online Form भरने की सुविधा।",
- list:[
-  "सरकारी भर्ती Form",
-  "Scholarship Form",
-  "College / University Form",
-  "Exam Form",
-  "अन्य Online Applications"
- ]
+text:"सभी प्रकार के Online Form भरने की सुविधा।",
+list:[
+"Government Job Form",
+"Scholarship Form",
+"College / University Form",
+"Exam Form",
+"Admission Form",
+"Other Online Applications"
+]
 },
 
 "PAN Card":{
- text:"PAN Card से संबंधित ऑनलाइन सेवाएं।",
- list:[
-  "New PAN Application",
-  "PAN Correction",
-  "PAN Download",
-  "PAN Related Assistance"
- ]
+text:"PAN Card से संबंधित ऑनलाइन सहायता।",
+list:[
+"New PAN Application",
+"PAN Correction",
+"PAN Download",
+"PAN Related Assistance"
+]
 },
 
 "Aadhaar":{
- text:"Aadhaar से संबंधित उपलब्ध ऑनलाइन सहायता।",
- list:[
-  "Aadhaar Download",
-  "Aadhaar Status",
-  "Aadhaar PVC",
-  "Aadhaar Related Assistance"
- ]
+text:"Aadhaar से संबंधित उपलब्ध ऑनलाइन सहायता।",
+list:[
+"Aadhaar Download",
+"Aadhaar Status",
+"PVC Aadhaar",
+"Aadhaar Related Assistance"
+]
 },
 
 "Railway":{
- text:"Railway की ऑनलाइन सेवाओं में सहायता।",
- list:[
-  "Train Ticket Assistance",
-  "PNR Check",
-  "Train Information",
-  "Railway Form Assistance"
- ]
+text:"Railway की विभिन्न ऑनलाइन सेवाओं में सहायता।",
+list:[
+"Train Ticket Assistance",
+"PNR Check",
+"Train Information",
+"Railway Form Assistance"
+]
 },
 
 "Print / Scan":{
- text:"High Quality Printing और Scanning सुविधा।",
- list:[
-  "Black & White Print",
-  "Color Print",
-  "Document Scan",
-  "Photocopy",
-  "Lamination"
- ]
+text:"Printing और Scanning की सुविधा।",
+list:[
+"Black & White Print",
+"Color Print",
+"Document Scan",
+"Photocopy"
+]
 },
 
 "Resume":{
- text:"Professional Resume और CV बनाने की सुविधा।",
- list:[
-  "Fresh Resume",
-  "Professional CV",
-  "Job Resume",
-  "Resume Printing"
- ]
+text:"Professional Resume और CV बनाने की सुविधा।",
+list:[
+"Fresh Resume",
+"Professional CV",
+"Job Resume",
+"Resume Printing"
+]
 },
 
 "Passport Photo":{
- text:"Passport Size Photo की सुविधा।",
- list:[
-  "Passport Photo",
-  "Visa Photo",
-  "ID Card Photo",
-  "Photo Editing",
-  "Photo Printing"
- ]
+text:"Passport Size Photo की सुविधा।",
+list:[
+"Passport Photo",
+"Visa Photo",
+"ID Photo",
+"Photo Editing",
+"Photo Printing"
+]
 },
 
-"Online Services":{
- text:"विभिन्न Digital और Online Services में सहायता।",
- list:[
-  "Government Services",
-  "Education Services",
-  "Job Services",
-  "Document Services",
-  "Online Application"
- ]
+"Online Correction":{
+text:"विभिन्न Online Correction सेवाओं में सहायता।",
+list:[
+"Online Form Correction",
+"Application Correction",
+"Document Correction Assistance"
+]
+},
+
+"Other Services":{
+text:"अन्य Digital Services के लिए संपर्क करें।",
+list:[
+"Government Services",
+"Education Services",
+"Job Services",
+"Document Services",
+"Online Application"
+]
 }
 
 };
 
 
-/* CURRENT SERVICE */
+let selectedService="";
 
-let selectedService = "";
-
-
-/* OPEN SERVICE */
 
 function openService(name){
 
-  selectedService = name;
+selectedService=name;
 
-  document.getElementById("serviceModal").style.display="block";
+document.getElementById("serviceModal").style.display="block";
 
-  document.getElementById("serviceTitle").innerText =
-    "🔹 " + name;
+document.getElementById("serviceTitle").innerText=
+"🔹 "+name;
 
-  document.getElementById("serviceText").innerText =
-    serviceData[name].text;
+document.getElementById("serviceText").innerText=
+serviceData[name].text;
 
-  let list =
-    document.getElementById("serviceList");
+let list=document.getElementById("serviceList");
 
-  list.innerHTML="";
+list.innerHTML="";
 
-  serviceData[name].list.forEach(function(item){
+serviceData[name].list.forEach(function(item){
 
-    let li=document.createElement("li");
+let li=document.createElement("li");
 
-    li.innerText=item;
+li.innerText=item;
 
-    list.appendChild(li);
+list.appendChild(li);
 
-  });
+});
 
-  document.getElementById("customerName").value="";
-  document.getElementById("customerMobile").value="";
-  document.getElementById("customerMessage").value="";
-
-  document.getElementById("successMessage").style.display="none";
 }
 
-
-/* CLOSE SERVICE */
 
 function closeService(){
 
-  document.getElementById("serviceModal").style.display="none";
+document.getElementById("serviceModal").style.display="none";
 
 }
 
 
-/* OUTSIDE CLICK */
+function selectServiceAndScroll(event){
+
+event.preventDefault();
+
+closeService();
+
+document.getElementById("customerService").value=selectedService;
+
+document.querySelector(".enquiry").scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
 
 window.onclick=function(event){
 
-  let modal=document.getElementById("serviceModal");
+let modal=document.getElementById("serviceModal");
 
-  if(event.target === modal){
-    closeService();
-  }
+if(event.target==modal){
+
+modal.style.display="none";
+
+}
 
 };
 
 
-/* SEARCH */
-
 function searchService(){
 
-  let input =
-    document.getElementById("search")
-    .value
-    .toLowerCase()
-    .trim();
+let input=document
+.getElementById("search")
+.value
+.toLowerCase();
 
-  let services =
-    document.getElementsByClassName("service");
+let services=document
+.getElementsByClassName("service");
 
-  let found = 0;
+for(let i=0;i<services.length;i++){
 
-  for(let i=0;i<services.length;i++){
+let text=services[i]
+.innerText
+.toLowerCase();
 
-    let text =
-      services[i]
-      .innerText
-      .toLowerCase();
+if(text.includes(input)){
 
-    if(text.includes(input)){
+services[i].style.display="";
 
-      services[i].style.display="";
+}else{
 
-      found++;
+services[i].style.display="none";
 
-    }else{
+}
 
-      services[i].style.display="none";
-
-    }
-
-  }
-
-  let noResult =
-    document.getElementById("noResult");
-
-  if(found === 0){
-
-    noResult.style.display="block";
-
-  }else{
-
-    noResult.style.display="none";
-
-  }
+}
 
 }
 
 
-/* SEND REQUEST */
+function sendEnquiry(event){
 
-function sendRequest(event){
-  event.preventDefault();
-}
+event.preventDefault();
 
+let name=document
+.getElementById("customerName")
+.value.trim();
 
-/* SEND REQUEST TO SELECTED WHATSAPP */
+let mobile=document
+.getElementById("customerMobile")
+.value.trim();
 
-function sendRequestTo(number){
+let service=document
+.getElementById("customerService")
+.value;
 
-  let name =
-    document.getElementById("customerName")
-    .value
-    .trim();
+let message=document
+.getElementById("customerMessage")
+.value.trim();
 
-  let mobile =
-    document.getElementById("customerMobile")
-    .value
-    .trim();
-
-  let message =
-    document.getElementById("customerMessage")
-    .value
-    .trim();
+let whatsapp=document
+.getElementById("whatsappNumber")
+.value;
 
 
-  if(name === ""){
+if(!/^[0-9]{10}$/.test(mobile)){
 
-    alert("कृपया Customer Name डालें।");
+alert("कृपया सही 10 digit मोबाइल नंबर डालें।");
 
-    return;
-
-  }
-
-
-  if(!/^[0-9]{10}$/.test(mobile)){
-
-    alert("कृपया सही 10 digit Mobile Number डालें।");
-
-    return;
-
-  }
-
-
-  let whatsappMessage =
-
-    "🌐 *Smart Link Cyber Cafe - Service Request*"
-    + "\n\n"
-
-    + "📌 *Service:* "
-    + selectedService
-
-    + "\n👤 *Customer Name:* "
-    + name
-
-    + "\n📱 *Customer Mobile:* "
-    + mobile
-
-    + "\n📝 *Requirement:* "
-    + (message || "कोई अतिरिक्त जानकारी नहीं")
-
-    + "\n\n"
-    + "यह Request Website से भेजी गई है।";
-
-
-  let whatsappURL =
-    "https://wa.me/91"
-    + number
-    + "?text="
-    + encodeURIComponent(whatsappMessage);
-
-
-  document.getElementById("successMessage")
-    .style.display="block";
-
-
-  setTimeout(function(){
-
-    window.open(
-      whatsappURL,
-      "_blank"
-    );
-
-  },400);
+return;
 
 }
 
-</script></body>
-</html>
+
+let text=
+"🌐 Trendz Online Hub - Customer Enquiry%0A%0A"+
+"👤 Name: "+encodeURIComponent(name)+"%0A"+
+"📱 Mobile: "+encodeURIComponent(mobile)+"%0A"+
+"📝 Service: "+encodeURIComponent(service)+"%0A"+
+"💬 Message: "+encodeURIComponent(message);
+
+
+window.open(
+"https://wa.me/"+whatsapp+"?text="+text,
+"_blank"
+);
+
+}
+
+</script>
+
+</body>
+  </html>
